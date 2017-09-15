@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>Exercice&nbsp;: D&eacute;termination d'une fourchette d'&acirc;ge [Initiation aux tableurs]</title>
+  <meta charset="UTF-8">
+  <meta name="generator" content="SCENARI 4.2.101 / Opale 3.6.020">
+  <meta name="revision" content="2017-09-15 08:39">
+  <link rel="start" href="module_Contenu.html" title="Initiation aux tableurs">
+  <meta name="author" content="Laurent Berger  Thierry Chaillou Nicolas Dugu&eacute; Mohamed Oubella ">
+  <meta name="keywords" content>
+  <meta name="date" content="2017">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scImgMgr/scImgMgr.css">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scCodeMgr/scCodeMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {id:"j7lmtzc1"};
+/*1*/ window.scLoadParams = {destUri:"/co/OperateurBooleenAGE.html", pathToRoot:"../"};
+</script>
+  <script type="text/JavaScript" src="../lib-sc/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scMapMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_assmnt.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDragMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scAssmntMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_mathjax/mathjaxMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_searchMgr/searchMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scMediaMgr/scMediaMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_outMgr/outMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{if(window.opener && window.opener.scServices && window.opener.scServices.id == scServices.id) scServices = window.opener.scServices; else if(window.parent && window.parent.scServices && window.parent.scServices.id == scServices.id) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerAdaptedImage("ide:content/des:img");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/des:span.capTi"});
+
+</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/main.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/skin.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+  <script type="text/JavaScript">
+outMgr.declareOutline("module_Contenu.txt");
+	</script> </head>
+ <body class="default module quiz">
+  <div id="root"><header id="header" role="banner"><h1><span>Initiation aux tableurs</span></h1><nav role="navigation"><ul id="accessibility"><li class="waiContent"><a href="#content"><span>contenu</span></a></li><li class="waiMenu"><a href="#menu"><span>menu</span></a></li><li class="waiNav"><a href="#navigation"><span>navigation</span></a></li><li class="waiTools"><a href="#tools"><span>outils</span></a></li><li class="waiFoot"><a href="#footer"><span>pied de page</span></a></li></ul></nav></header><main id="main" role="main"><div id="document"><div id="content" tabindex="-1"><div class="scroller"><hr class="hidden"><section class="hBk quiz article 
+       match"><h2 class="hBk_ti"><span>Exercice&nbsp;: D&eacute;termination d'une fourchette d'&acirc;ge</span></h2><div class="hBk_co"><script type="text/JavaScript">
+var lGXEuuAV3odEATjJFd4dqc = {
+
+	fId : "lGXEuuAV3odEATjJFd4dqc",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+case "play" : {
+
+	this.refreshResult = function(pDisplay){
+		if(pDisplay) this.fResultDisplay = pDisplay;
+		if(this.fResultDisplay == "none") for(var i=this.fLabels.length -1; i >=0; i--)  scDragMgr.helpers.delClass(this.fLabels[i],"ddLabel_Right","ddLabel_Wrong");
+		else for(var i=this.fLabels.length -1; i >=0; i--) {
+			var vLabel = this.fLabels[i];
+
+			var vOldClass = (vLabel.sG == vLabel.rG ) ? "ddLabel_Wrong" : "ddLabel_Right";
+			var vNewClass = (vLabel.sG == vLabel.rG ) ? "ddLabel_Right" : "ddLabel_Wrong";
+
+			scDragMgr.helpers.switchClass(vLabel, vOldClass, vNewClass);
+		}
+	};
+var vLoadRespSession = "";
+
+		for(var i = this.fLabels.length - 1; i >=0; i--) scDragMgr.setDraggable(this.fLabels[i], true);
+		this.load(vLoadRespSession);
+		this.synch();
+	this.fResultDisplay = "none";
+
+var vLoadScoreSession = "";
+		this.fMinPts = scServices.assmntMgr.getMinPts(this.fId, vLoadScoreSession);
+		this.fScorePts = scServices.assmntMgr.getScorePts(this.fId, vLoadScoreSession);
+		this.fMaxPts = scServices.assmntMgr.getMaxPts(this.fId, vLoadScoreSession);
+scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_"), "visible");
+scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_score"), "invisible");
+scAssmntMgr.setToggleStatus(sc$("lGXEuuAV3odEATjJFd4dqc_S_N8c"), false);
+this.fRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, this.fRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, this.fRespSession, "attempt");
+
+		this.computeScore = function() {
+this.fMinPts = 0;
+		this.fMaxPts = this.fLabels.length;
+		this.fScorePts = 0;
+		for(var i=this.fLabels.length -1; i >=0; i--) {
+			if(this.fLabels[i].sG == this.fLabels[i].rG) this.fScorePts += 1;
+		}
+
+		//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+		if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+		this.refreshScoresFeedbacks();
+		this.refreshResult();
+	}
+
+if(this.fRespSession != vLoadRespSession) this.saveResp(this.fRespSession);
+
+		this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	onActionNac : function(pButton){
+		if(scAssmntMgr.isDisabled(pButton)) return;
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+		scServices.assmntMgr.commit();
+	},
+	onActionN8c : function(pButton){
+		if(scAssmntMgr.isDisabled(pButton)) return;
+		var vIsOn = scAssmntMgr.isToggleOn(pButton);
+		if(vIsOn) {
+scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_score"), "invisible");
+this.refreshResult("none");scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_globalExp"), "collapsed");
+
+		} else {
+scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_score"), "visible");
+this.refreshResult("addClass");scAssmntMgr.setMode(sc$("lGXEuuAV3odEATjJFd4dqc_N_globalExp"), "visible");
+
+		}
+		scAssmntMgr.setToggleStatus(pButton, ! vIsOn);
+		scServices.assmntMgr.commit();
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.lGXEuuAV3odEATjJFd4dqc_form;
+		switch(this.fCurSeq) {
+case "play" : {
+		this.refreshResult("none");
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	saveResp:function(pSession){
+		if(pSession==null) return;
+		var vLabel = this.fLabels[0];
+		var vStr = "[{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		for(var i=1, len=this.fLabels.length; i < len; i++) {
+			vLabel = this.fLabels[i];
+			vStr += ",{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		}
+		vStr+="]";
+		scServices.assmntMgr.setResponse(this.fId, pSession, "pos", vStr);
+	},
+	load:function(pSession){
+		var vStr = (pSession!=null) ? scServices.assmntMgr.getResponse(this.fId, pSession, "pos") : null;
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			for(var j=vGroup.length-1; j >=0; j--) vGroup[j].labelsToAdd = [];
+		}
+		if(vStr) {
+						var vList = eval(vStr);
+			for(var i=0, len=this.fLabels.length; i < len; i++) {
+				var vLabelToAdd = vList[i];
+				vLabelToAdd.label = this.fLabels[i];
+				var vGroupC = this.fGroupsC[vLabelToAdd.g];
+				if(vGroupC.length == 1) vGroupC[0].labelsToAdd[vLabelToAdd.offs] = vLabelToAdd; 
+				else vGroupC[vLabelToAdd.offs].labelsToAdd.push(vLabelToAdd);
+			}
+		} else {
+						var vBasketC = this.fGroupsC[0];
+
+			for(var i=vBasketC.length-1; i >=0; i--) for(var j=0, vLen=vBasketC[i]._Labels.length; j < vLen; j++) vBasketC[i].labelsToAdd.push({label:vBasketC[i]._Labels[j]});
+
+		}
+		scDragMgr.repopulateContainers("lGXEuuAV3odEATjJFd4dqc");
+	},
+	synch:function(){
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			var vOffset = 0;
+			for(var j=0, vLenJ=vGroup.length; j < vLenJ; j++) {
+				var vItems = scDragMgr.getLabels(vGroup[j]);
+				var vLenK = vItems.length;
+								if(vLenK == 0) vOffset++;
+				else for(var k=0; k < vLenK; k++) {
+					vItems[k].rG = i;
+					vItems[k].rO = vOffset++;
+				}
+			}
+		}
+	},
+	refreshScoresFeedbacks : function(){
+
+		var vScoreNode = sc$("lGXEuuAV3odEATjJFd4dqc_SNcb");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	onLoad: function(){
+	try{
+		var onChange = function() {
+lGXEuuAV3odEATjJFd4dqc.synch();
+lGXEuuAV3odEATjJFd4dqc.computeScore();
+lGXEuuAV3odEATjJFd4dqc.saveResp(lGXEuuAV3odEATjJFd4dqc.fRespSession);
+			scServices.assmntMgr.commit();
+		}
+		this.fLabels = [];
+		var vLabel, vC;
+scDragMgr.makeContainer("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_S_N4b"), vC = sc$("lGXEuuAV3odEATjJFd4dqc_S_N4d"), sc$("lGXEuuAV3odEATjJFd4dqc_S_N58")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddBasketDragOver');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN1e");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN2d");
+	this.fLabels.push(vLabel);
+	vLabel.sO=1;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN4e");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN5d");
+	this.fLabels.push(vLabel);
+	vLabel.sO=1;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN6c");
+	this.fLabels.push(vLabel);
+	vLabel.sO=2;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN7b");
+	this.fLabels.push(vLabel);
+	vLabel.sO=3;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("lGXEuuAV3odEATjJFd4dqc_LN8a");
+	this.fLabels.push(vLabel);
+	vLabel.sO=4;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("lGXEuuAV3odEATjJFd4dqc", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+scDragMgr.makeContainer("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_NN6b_Nd"), vC = sc$("lGXEuuAV3odEATjJFd4dqc_NN72_Nd"), sc$("lGXEuuAV3odEATjJFd4dqc_NN74_Nd")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+scDragMgr.makeContainer("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_NN6b_N3d"), vC = sc$("lGXEuuAV3odEATjJFd4dqc_NN72_N3d"), sc$("lGXEuuAV3odEATjJFd4dqc_NN74_N3d")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+this.fGroupsC = [scDragMgr.getContainers("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_L")),scDragMgr.getContainers("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_RNd")),scDragMgr.getContainers("lGXEuuAV3odEATjJFd4dqc", sc$("lGXEuuAV3odEATjJFd4dqc_RN3d"))];
+		for(var i = this.fGroupsC[0].length-1; i >=0; i--) this.fGroupsC[0][i]._Labels = scDragMgr.getLabels(this.fGroupsC[0][i]);
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("lGXEuuAV3odEATjJFd4dqc_A");
+		vNodeRoot.style.display = "block"; 
+	}catch(e){console.log(e);}
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = lGXEuuAV3odEATjJFd4dqc;
+scOnUnloads[scOnUnloads.length] = lGXEuuAV3odEATjJFd4dqc;
+</script><div id="lGXEuuAV3odEATjJFd4dqc_A" style="display:none;"><div class="quizBody"><div class="question"></div><div class="response" aria-live="polite"><table id="lGXEuuAV3odEATjJFd4dqc_N_" class="mtTable"><tr><td class="mtTdBasket"><div id="lGXEuuAV3odEATjJFd4dqc_L" class="ddBasket "><div id="lGXEuuAV3odEATjJFd4dqc_S_N4b" class="ddBasketCatch "><div id="lGXEuuAV3odEATjJFd4dqc_S_N4d" class="ddBasketCont "><div id="lGXEuuAV3odEATjJFd4dqc_LN6c" class="mtLabel "><p>=ET(age&gt;=20;age&lt;=0)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN2d" class="mtLabel "><p>=ET(age&lt;=18;age&gt;=12)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN7b" class="mtLabel "><p>=ET(age&gt;=12,age&lt;=18)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN1e" class="mtLabel "><p>=ET(age&gt;=12;age&lt;=18)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN8a" class="mtLabel "><p>=ET(age&gt;=12;age&gt;=18)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN5d" class="mtLabel "><p>=ET(age&lt;=0&nbsp;;age&lt;=20)</p></div><div id="lGXEuuAV3odEATjJFd4dqc_LN4e" class="mtLabel "><p>=ET(A3&gt;=12;age&lt;=18)</p></div></div><div id="lGXEuuAV3odEATjJFd4dqc_S_N58" class="ddBasketIfEmpty "><span>Plus d'&eacute;l&eacute;ments &agrave; cat&eacute;goriser</span></div><div class="ddBasketEnd"></div></div></div></td><td class="mtTdArrow"></td><td class="mtTdDropCont"><div id="lGXEuuAV3odEATjJFd4dqc_RNd" class="ddRepArea "><div id="lGXEuuAV3odEATjJFd4dqc_NN6b_Nd" class="ddDropCatch "><div class="ddDropTi"><p>On veut savoir si l'age d'une personne est compris entre 12 et 18 ans. Quelle(s)  formule(s) peut-on utiliser&nbsp;?</p></div><div id="lGXEuuAV3odEATjJFd4dqc_NN72_Nd" class="ddDropCont "></div><div id="lGXEuuAV3odEATjJFd4dqc_NN74_Nd" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div><div id="lGXEuuAV3odEATjJFd4dqc_RN3d" class="ddRepArea "><div id="lGXEuuAV3odEATjJFd4dqc_NN6b_N3d" class="ddDropCatch "><div class="ddDropTi"><p>Formule inutile</p></div><div id="lGXEuuAV3odEATjJFd4dqc_NN72_N3d" class="ddDropCont "></div><div id="lGXEuuAV3odEATjJFd4dqc_NN74_N3d" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div></td></tr></table></div><div class="toolbar"><a role="button" title="Afficher le score et la correction" href="#" onkeydown="scDynUiMgr.handleBtnKeyDwn(event);" onkeyup="scDynUiMgr.handleBtnKeyUp(event);" onclick="lGXEuuAV3odEATjJFd4dqc.onActionN8c(this); return false;" class="btnQuiz correction " id="lGXEuuAV3odEATjJFd4dqc_S_N8c"><span>Correction</span></a><a role="button" title="Effacer les r&eacute;ponses" href="#" onkeydown="scDynUiMgr.handleBtnKeyDwn(event);" onkeyup="scDynUiMgr.handleBtnKeyUp(event);" onclick="lGXEuuAV3odEATjJFd4dqc.onActionNac(this); return false;" class="btnQuiz reset "><span>Recommencer</span></a><span class="scoreBox"><span class="score " aria-live="polite" id="lGXEuuAV3odEATjJFd4dqc_N_score"><span id="lGXEuuAV3odEATjJFd4dqc_SNcb"><span></span></span></span></span></div></div></div></div></section></div></div><div id="navigation" tabindex="-1"><hr class="hidden"><nav class="pageTurner" role="navigation"><ul><li><a rel="prev" href="OperateurBooleenOU.html" target="_self" class="btnNav prev" title="Pr&eacute;c&eacute;dent (Exercice&nbsp;: Utilisation du OU)"><span>Pr&eacute;c&eacute;dent</span></a></li><li><a rel="next" href="Exo3.html" target="_self" class="btnNav next" title="Suivant (Exercice&nbsp;: Exercice 3)"><span>Suivant</span></a></li></ul></nav></div></div><div id="toolbox"><nav id="menu" class="pageSelector" role="navigation" tabindex="-1" aria-label="menu principal"><hr class="hidden"><ul class="mnu static" data-totalPages="106"><li class="sel_no anc_no type_l  dpt_0 intro"><div class="lbl type_l" id="module_Contenu_1.html"><a href="module_Contenu_1.html" target="_self" class="item"><span>Introduction</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="MiseEnPage.html"><a href="MiseEnPage.html" target="_self" class="item"><span>Pr&eacute;sentation d'une feuille ou d'un classeur</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="Formules.html"><a href="Formules.html" target="_self" class="item"><span>les formules</span></a></div></li><li class="sel_no anc_yes type_b  dpt_0 courseUa"><div class="lbl type_b" id="ComparaisonLogique.html"><a href="ComparaisonLogique.html" target="_self" class="item" type="up"><span>Op&eacute;rateurs de comparaisons et Bool&eacute;ens</span></a></div><ul class="sub mnu_open"><li class="sel_no anc_no type_l  dpt_1 intro"><div class="lbl type_l" id="ComparaisonLogique_1.html"><a href="ComparaisonLogique_1.html" target="_self" class="item"><span>Introduction</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 expUc"><div class="lbl type_l" id="Comparaison.html"><a href="Comparaison.html" target="_self" class="item"><span>Op&eacute;rateur de comparaison</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 expUc"><div class="lbl type_l" id="OperateursBooleen.html"><a href="OperateursBooleen.html" target="_self" class="item"><span>Op&eacute;rateurs Bool&eacute;ens</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="SyntaxeEt.html"><a href="SyntaxeEt.html" target="_self" class="item"><span>Exercice&nbsp;: Syntaxe du ET</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="SyntaxeOu.html"><a href="SyntaxeOu.html" target="_self" class="item"><span>Exercice&nbsp;: Syntaxe du ou</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="OperateurBooleenET.html"><a href="OperateurBooleenET.html" target="_self" class="item"><span>Exercice&nbsp;: Utilisation du ET</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="OperateurBooleenOU.html"><a href="OperateurBooleenOU.html" target="_self" class="item"><span>Exercice&nbsp;: Utilisation du OU</span></a></div></li><li class="sel_yes anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="OperateurBooleenAGE.html"><span class="item"><span>Exercice&nbsp;: D&eacute;termination d'une fourchette d'&acirc;ge</span></span></div></li><li class="sel_no anc_no type_l  dpt_1 practUc"><div class="lbl type_l" id="Exo3.html"><a href="Exo3.html" target="_self" class="item"><span>Exercice&nbsp;: Exercice 3</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 practUc"><div class="lbl type_l" id="Exo4.html"><a href="Exo4.html" target="_self" class="item"><span>Exercice&nbsp;: Exercice 4</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 practUc"><div class="lbl type_l" id="Exo5.html"><a href="Exo5.html" target="_self" class="item"><span>Exercice&nbsp;: Exercice 5</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 expUc"><div class="lbl type_l" id="NatureContenuCellule.html"><a href="NatureContenuCellule.html" target="_self" class="item"><span>D&eacute;termination du contenu d'une cellule</span></a></div></li><li class="sel_no anc_no type_l  dpt_1 quiz"><div class="lbl type_l" id="Fonctionlogique.html"><a href="Fonctionlogique.html" target="_self" class="item"><span>Exercice&nbsp;: Fonction logique</span></a></div></li></ul></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="OperateurLogique.html"><a href="OperateurLogique.html" target="_self" class="item"><span>Utilisation du ET et du OU</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_2.html"><a href="module_Contenu_2.html" target="_self" class="item"><span>Trier un tableau</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="Tri.html"><a href="Tri.html" target="_self" class="item"><span>Utilisation du tri</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_3.html"><a href="module_Contenu_3.html" target="_self" class="item"><span>R&eacute;f&eacute;rences relatives et absolues</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="RefAbsRel.html"><a href="RefAbsRel.html" target="_self" class="item"><span>R&eacute;f&eacute;rences absolues et relatives</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_4.html"><a href="module_Contenu_4.html" target="_self" class="item"><span>Fonction SI</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="FonctionSi.html"><a href="FonctionSi.html" target="_self" class="item"><span>Fonction SI</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_5.html"><a href="module_Contenu_5.html" target="_self" class="item"><span>Fonctions NB.SI et SOMME.SI</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="SOMMESI_NBSI.html"><a href="SOMMESI_NBSI.html" target="_self" class="item"><span>Utilisation de somme.si et nb.si</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 practUc"><div class="lbl type_l" id="Exo12.html"><a href="Exo12.html" target="_self" class="item"><span>Exercice&nbsp;: exercice 12&nbsp;: Histogramme</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_6.html"><a href="module_Contenu_6.html" target="_self" class="item"><span>Mise en forme conditionnelle</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="MiseEnFormeCond.html"><a href="MiseEnFormeCond.html" target="_self" class="item"><span>Mise en forme conditionnelle</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_7.html"><a href="module_Contenu_7.html" target="_self" class="item"><span>Validation de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_8.html"><a href="module_Contenu_8.html" target="_self" class="item"><span>Recherche dans un tableau de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_9.html"><a href="module_Contenu_9.html" target="_self" class="item"><span>Retour sur la validation de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_10.html"><a href="module_Contenu_10.html" target="_self" class="item"><span>Traitement des erreurs</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_11.html"><a href="module_Contenu_11.html" target="_self" class="item"><span>Graphiques</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="gestiontemps.html"><a href="gestiontemps.html" target="_self" class="item"><span>Fonction de gestion du temps</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="solveur.html"><a href="solveur.html" target="_self" class="item"><span>Solveur d'Excel&nbsp;: valeur cible et solveur</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="tcdExcel.html"><a href="tcdExcel.html" target="_self" class="item"><span>Tableau crois&eacute; dynamique</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="CoursFonctionFi.html"><a href="CoursFonctionFi.html" target="_self" class="item"><span>Fonctions financi&egrave;res</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_12.html"><a href="module_Contenu_12.html" target="_self" class="item"><span>Exercices compl&eacute;mentaires et examen des ann&eacute;es pr&eacute;c&eacute;dentes</span></a></div></li></ul></nav><div id="tools" tabindex="-1"><hr class="hidden"><nav class="headingSelector" role="navigation"><ul class="mnu"><li class="anc_no home" data-position="uncle"><div class="lbl"><a href="module_Contenu.html" target="_self" class="item" type="index" title="Page d'accueil du module"><span>Accueil</span></a></div></li><li class="anc_yes module" data-position="ancestor"><div class="lbl"><span class="item"><span>Module</span></span></div></li><li class="anc_no tools" data-position="uncle"><div class="lbl"><a href="CoursTableur.html" target="_self" class="item" title="Outils transverses du module"><span>Outils</span></a></div></li></ul></nav></div></div></main><footer id="footer" role="contentinfo" tabindex="-1"><hr class="hidden"><a id="linkSp" target="_blank" href="http://scenari-platform.org" title="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)"><span><img alt="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)" src="../skin/img/tpl/scBtn.png"></span></a></footer></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scMediaMgr.init("des:.mediaPlayer");scImgMgr.init();outMgr.init();</script>
+ </body>
+</html>

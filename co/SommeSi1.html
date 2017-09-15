@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>Exercice d'auto-&eacute;valuation</title>
+  <meta charset="UTF-8">
+  <meta name="generator" content="SCENARI 4.2.101 / Opale 3.6.020">
+  <meta name="revision" content="2017-09-15 08:41">
+  <link rel="start" href="module_Contenu.html" title="Initiation aux tableurs">
+  <meta name="author" content="Laurent Berger  Thierry Chaillou Nicolas Dugu&eacute; Mohamed Oubella ">
+  <meta name="date" content="2017">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scImgMgr/scImgMgr.css">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scCodeMgr/scCodeMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {id:"j7lmtzc1"};
+/*1*/ window.scLoadParams = {destUri:"/co/SommeSi1.html", pathToRoot:"../"};
+</script>
+  <script type="text/JavaScript" src="../lib-sc/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_assmnt.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scMapMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDragMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scAssmntMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_mathjax/mathjaxMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scMediaMgr/scMediaMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{if(window.opener && window.opener.scServices && window.opener.scServices.id == scServices.id) scServices = window.opener.scServices; else if(window.parent && window.parent.scServices && window.parent.scServices.id == scServices.id) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerAdaptedImage("ide:content/des:img");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/des:span.capTi"});
+
+</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/main.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/skin.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+  <script type="text/javascript">try{
+	if(window.frameElement.setSubWindowTitle) window.frameElement.setSubWindowTitle(document.title);
+}catch(e){}
+</script>
+ </head>
+ <body class="subWin eval">
+  <div id="root"><header id="header" role="banner"><nav role="navigation"><ul id="accessibility"><li class="waiContent"><a href="#content"><span>contenu</span></a></li><li class="waiNav"><a href="#navigation"><span>navigation</span></a></li></ul></nav></header><main id="main" role="main"><div id="document"><div id="content" tabindex="-1"><div class="scroller"><hr class="hidden"><section class="hBk article eval"><h2 class="hBk_ti"><span>Moyenne en math des &eacute;l&egrave;ves avec plus de 10 en fran&ccedil;ais</span></h2><div class="hBk_co "><script type="text/JavaScript">
+var yOIIOU3hiLk4eYRe9kOgni_Aeval = {
+
+	fId : "yOIIOU3hiLk4eYRe9kOgni",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+case "init" : {
+
+	this.refreshResult = function(pDisplay){
+		if(pDisplay) this.fResultDisplay = pDisplay;
+		if(this.fResultDisplay == "none") for(var i=this.fLabels.length -1; i >=0; i--)  scDragMgr.helpers.delClass(this.fLabels[i],"assmntResult_Right","assmntResult_Wrong");
+		else for(var i=this.fLabels.length -1; i >=0; i--) {
+			var vLabel = this.fLabels[i];
+
+			var vOldClass = (vLabel.sG == vLabel.rG ) ? "assmntResult_Wrong" : "assmntResult_Right";
+			var vNewClass = (vLabel.sG == vLabel.rG ) ? "assmntResult_Right" : "assmntResult_Wrong";
+
+			scDragMgr.helpers.switchClass(vLabel, vOldClass, vNewClass);
+		}
+	};
+var vLoadRespSession = "eval";
+
+		for(var i = this.fLabels.length - 1; i >=0; i--) scDragMgr.setDraggable(this.fLabels[i], true);
+		this.load(vLoadRespSession);
+		this.synch();
+	this.fResultDisplay = "none";
+
+scAssmntMgr.setMode(sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_N_"), "visible");
+this.fRespSession = "eval";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, this.fRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, this.fRespSession, "attempt");
+
+		this.computeScore = function() {
+
+		this.refreshScoresFeedbacks();
+		this.refreshResult();
+	}
+
+if(this.fRespSession != vLoadRespSession) this.saveResp(this.fRespSession);
+
+		this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+case "read" : {
+
+	this.refreshResult = function(pDisplay){
+		if(pDisplay) this.fResultDisplay = pDisplay;
+		if(this.fResultDisplay == "none") for(var i=this.fLabels.length -1; i >=0; i--)  scDragMgr.helpers.delClass(this.fLabels[i],"assmntResult_Right","assmntResult_Wrong");
+		else for(var i=this.fLabels.length -1; i >=0; i--) {
+			var vLabel = this.fLabels[i];
+
+			var vOldClass = (vLabel.sG == vLabel.rG ) ? "assmntResult_Wrong" : "assmntResult_Right";
+			var vNewClass = (vLabel.sG == vLabel.rG ) ? "assmntResult_Right" : "assmntResult_Wrong";
+
+			scDragMgr.helpers.switchClass(vLabel, vOldClass, vNewClass);
+		}
+	};
+var vLoadRespSession = "eval";
+
+		for(var i = this.fLabels.length - 1; i >=0; i--) scDragMgr.setDraggable(this.fLabels[i], false);
+		this.load(vLoadRespSession);
+		this.synch();
+	this.fResultDisplay = "none";
+
+scAssmntMgr.setMode(sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_N_"), "visible");
+this.fRespSession = null;
+
+		this.computeScore = function() {
+
+		this.refreshScoresFeedbacks();
+		this.refreshResult();
+	}
+
+
+		this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.yOIIOU3hiLk4eYRe9kOgni_Aeval_form;
+		switch(this.fCurSeq) {
+case "init" : {
+		this.refreshResult("none");
+
+		break;
+	}
+case "read" : {
+		this.refreshResult("none");
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	if(scServices.assmntMgr.getCompletionStatus(this.fId, "eval") != "complete" && true) return "init";
+	return "read";
+	},
+
+	saveResp:function(pSession){
+		if(pSession==null) return;
+		var vLabel = this.fLabels[0];
+		var vStr = "[{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		for(var i=1, len=this.fLabels.length; i < len; i++) {
+			vLabel = this.fLabels[i];
+			vStr += ",{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		}
+		vStr+="]";
+		scServices.assmntMgr.setResponse(this.fId, pSession, "pos", vStr);
+	},
+	load:function(pSession){
+		var vStr = (pSession!=null) ? scServices.assmntMgr.getResponse(this.fId, pSession, "pos") : null;
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			for(var j=vGroup.length-1; j >=0; j--) vGroup[j].labelsToAdd = [];
+		}
+		if(vStr) {
+						var vList = eval(vStr);
+			for(var i=0, len=this.fLabels.length; i < len; i++) {
+				var vLabelToAdd = vList[i];
+				vLabelToAdd.label = this.fLabels[i];
+				var vGroupC = this.fGroupsC[vLabelToAdd.g];
+				if(vGroupC.length == 1) vGroupC[0].labelsToAdd[vLabelToAdd.offs] = vLabelToAdd; 
+				else vGroupC[vLabelToAdd.offs].labelsToAdd.push(vLabelToAdd);
+			}
+		} else {
+						var vBasketC = this.fGroupsC[0];
+
+			for(var i=vBasketC.length-1; i >=0; i--) for(var j=0, vLen=vBasketC[i]._Labels.length; j < vLen; j++) vBasketC[i].labelsToAdd.push({label:vBasketC[i]._Labels[j]});
+
+		}
+		scDragMgr.repopulateContainers("yOIIOU3hiLk4eYRe9kOgni_Aeval");
+	},
+	synch:function(){
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			var vOffset = 0;
+			for(var j=0, vLenJ=vGroup.length; j < vLenJ; j++) {
+				var vItems = scDragMgr.getLabels(vGroup[j]);
+				var vLenK = vItems.length;
+								if(vLenK == 0) vOffset++;
+				else for(var k=0; k < vLenK; k++) {
+					vItems[k].rG = i;
+					vItems[k].rO = vOffset++;
+				}
+			}
+		}
+	},
+	refreshScoresFeedbacks : function(){
+
+	},
+	onLoad: function(){
+	try{
+		var onChange = function() {
+yOIIOU3hiLk4eYRe9kOgni_Aeval.synch();
+yOIIOU3hiLk4eYRe9kOgni_Aeval.computeScore();
+yOIIOU3hiLk4eYRe9kOgni_Aeval.saveResp(yOIIOU3hiLk4eYRe9kOgni_Aeval.fRespSession);
+			scServices.assmntMgr.commit();
+		}
+		this.fLabels = [];
+		var vLabel, vC;
+scDragMgr.makeContainer("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N4d"), vC = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N4f"), sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N5a")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddBasketDragOver');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LN44");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LN53");
+	this.fLabels.push(vLabel);
+	vLabel.sO=1;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LN62");
+	this.fLabels.push(vLabel);
+	vLabel.sO=2;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LN71");
+	this.fLabels.push(vLabel);
+	vLabel.sO=3;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LN80");
+	this.fLabels.push(vLabel);
+	vLabel.sO=4;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_LNa1");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("yOIIOU3hiLk4eYRe9kOgni_Aeval", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+scDragMgr.makeContainer("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN6d_N33"), vC = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN74_N33"), sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN76_N33")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+scDragMgr.makeContainer("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN6d_N90"), vC = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN74_N90"), sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_NN76_N90")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+this.fGroupsC = [scDragMgr.getContainers("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_L")),scDragMgr.getContainers("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_RN33")),scDragMgr.getContainers("yOIIOU3hiLk4eYRe9kOgni_Aeval", sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_RN90"))];
+		for(var i = this.fGroupsC[0].length-1; i >=0; i--) this.fGroupsC[0][i]._Labels = scDragMgr.getLabels(this.fGroupsC[0][i]);
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("yOIIOU3hiLk4eYRe9kOgni_Aeval_A");
+		vNodeRoot.style.display = "block"; 
+	}catch(e){console.log(e);}
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = yOIIOU3hiLk4eYRe9kOgni_Aeval;
+scOnUnloads[scOnUnloads.length] = yOIIOU3hiLk4eYRe9kOgni_Aeval;
+</script><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_A" style="display:none;"><div class="evalBody"><div class="question"><div class="rBk "><p>Quelle fonction permet de d&eacute;terminer la moyenne en math des &eacute;l&egrave;ves qui ont plus de 10 en fran&ccedil;ais&nbsp;?</p></div><div class="rBk "><div class="txtRes "><div class="img lft "><figure role="group" class="resInFlow jpeg"><div class="resInFlow_co "><a href="../res/sommesi1.jpg" class="imgZoom" target="_blank" onclick="scImgMgr.loading(); return false;" title="Cliquez pour agrandir (nouvelle fen&ecirc;tre)"><img src="../res/sommesi1_1.jpg" width="300" height="185" alt></a></div><figcaption class="resInFlow_ti "><span class="capTi ">Notes &eacute;l&egrave;ves</span></figcaption></figure></div><div class="txt "><p>Tableau des donn&eacute;es&nbsp;: 9 &eacute;l&egrave;ves ont plus de 10 en fran&ccedil;ais. Ces &eacute;l&egrave;ves ont comme moyenne en math 0, 5, 2, 18, 16, 7, 7, 0, 20 soit 8.33 de moyenne</p></div></div></div></div><div class="response" aria-live="polite"><table id="yOIIOU3hiLk4eYRe9kOgni_Aeval_N_" class="mtTable"><tr><td class="mtTdBasket"><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_L" class="ddBasket "><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N4d" class="ddBasketCatch "><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N4f" class="ddBasketCont "><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LN53" class="mtLabel "><p>=SOMME.SI(C2:C16;&quot;&gt;=10&quot;;C2:C16)/NB.SI(C2:C16;&quot;&gt;=10&quot;)</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LN44" class="mtLabel "><p>=SOMME.SI(C2:C16;&quot;&gt;=10&quot;;F2:F16)</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LN71" class="mtLabel "><p>=SOMME.SI(C2:C16;&quot;&gt;=10&quot;;F2:F16)/8</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LN62" class="mtLabel "><p>=SOMME.SI(C2:C16;&quot;&gt;=10&quot;;F2:F16)/NB.SI(F2:F16;&quot;&gt;=10&quot;)</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LNa1" class="mtLabel "><p>=SOMME.SI(C2:C16;&quot;&gt;=10&quot;;F2:F16)/NB.SI(C2:C16;&quot;&gt;=10&quot;)</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_LN80" class="mtLabel "><p>=NB.SI($C$2:$C$16;&quot;&gt;=10&quot;)</p></div></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_S_N5a" class="ddBasketIfEmpty "><span>Plus d'&eacute;l&eacute;ments &agrave; cat&eacute;goriser</span></div><div class="ddBasketEnd"></div></div></div></td><td class="mtTdArrow"></td><td class="mtTdDropCont"><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_RN33" class="ddRepArea "><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN6d_N33" class="ddDropCatch "><div class="ddDropTi"><p>Fonction(s) ne r&eacute;pondant pas &agrave; la question</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN74_N33" class="ddDropCont "></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN76_N33" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_RN90" class="ddRepArea "><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN6d_N90" class="ddDropCatch "><div class="ddDropTi"><p>Fonction(s) r&eacute;pondant &agrave; la question</p></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN74_N90" class="ddDropCont "></div><div id="yOIIOU3hiLk4eYRe9kOgni_Aeval_NN76_N90" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div></td></tr></table></div></div></div></div></section></div></div><div id="navigation" tabindex="-1"><hr class="hidden"><span class="evalCounter"><span class="seen">2</span><span class="over">/</span><span class="total">2</span></span><nav class="pageTurner" role="navigation"><ul><li><a rel="prev" href="NbSi1.html" target="_self" class="btnNav prevEval" title="Pr&eacute;c&eacute;dent (Exercice d'auto-&eacute;valuation)"><span>Pr&eacute;c&eacute;dent</span></a></li><li><a rel="next" href="SOMMESI_NBSI_5.html" target="_self" class="btnNav nextEval" title="Suivant (Fin de l'&eacute;valuation)"><span>Suivant</span></a></li></ul></nav></div></div></main></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scMediaMgr.init("des:.mediaPlayer");scImgMgr.init();</script>
+ </body>
+</html>

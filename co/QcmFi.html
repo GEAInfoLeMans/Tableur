@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>Exercices&nbsp;: Manipulation des Fonctions financi&egrave;res [Initiation aux tableurs]</title>
+  <meta charset="UTF-8">
+  <meta name="generator" content="SCENARI 4.2.101 / Opale 3.6.020">
+  <meta name="revision" content="2017-09-15 08:41">
+  <link rel="start" href="module_Contenu.html" title="Initiation aux tableurs">
+  <meta name="author" content="Laurent Berger  Thierry Chaillou Nicolas Dugu&eacute; Mohamed Oubella ">
+  <meta name="keywords" content>
+  <meta name="date" content="2017">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scImgMgr/scImgMgr.css">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scCodeMgr/scCodeMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {id:"j7lmtzc1"};
+/*1*/ window.scLoadParams = {destUri:"/co/QcmFi.html", pathToRoot:"../"};
+</script>
+  <script type="text/JavaScript" src="../lib-sc/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scMapMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_assmnt.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDragMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scAssmntMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_mathjax/mathjaxMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_searchMgr/searchMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scMediaMgr/scMediaMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_outMgr/outMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{if(window.opener && window.opener.scServices && window.opener.scServices.id == scServices.id) scServices = window.opener.scServices; else if(window.parent && window.parent.scServices && window.parent.scServices.id == scServices.id) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerAdaptedImage("ide:content/des:img");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/des:span.capTi"});
+
+</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/main.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/skin.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+  <script type="text/JavaScript">
+outMgr.declareOutline("module_Contenu.txt");
+	</script> </head>
+ <body class="default module coQuiz">
+  <div id="root"><header id="header" role="banner"><h1><span>Initiation aux tableurs</span></h1><nav role="navigation"><ul id="accessibility"><li class="waiContent"><a href="#content"><span>contenu</span></a></li><li class="waiMenu"><a href="#menu"><span>menu</span></a></li><li class="waiNav"><a href="#navigation"><span>navigation</span></a></li><li class="waiTools"><a href="#tools"><span>outils</span></a></li><li class="waiFoot"><a href="#footer"><span>pied de page</span></a></li></ul></nav></header><main id="main" role="main"><div id="document"><div id="content" tabindex="-1"><div class="scroller"><hr class="hidden"><section class="hBk quiz article coQuiz"><h2 class="hBk_ti"><span>Exercices&nbsp;: Manipulation des Fonctions financi&egrave;res</span></h2><div class="hBk_co"><script type="text/JavaScript">
+var Vj8gNQJcKFb2PGO6beUyDh = {
+
+	fId : "Vj8gNQJcKFb2PGO6beUyDh",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+scAssmntMgr.setMode(sc$("Vj8gNQJcKFb2PGO6beUyDh_N_score"), "invisible");
+scAssmntMgr.setToggleStatus(sc$("Vj8gNQJcKFb2PGO6beUyDh_S_N35"), false);
+
+		this.computeScore = function(pInput, pIdx) {
+			this.fMinPts = 0;
+			this.fMaxPts = 0;
+			this.fScorePts = 0;
+			var vRate;
+
+		var vSubAssmnt = {fSession:"", compute:function(pParent, pId, pRate){
+			this.fMinPts = scServices.assmntMgr.getMinPts(pId, this.fSession)||0;
+			this.fScorePts = scServices.assmntMgr.getScorePts(pId, this.fSession)||0;
+			this.fMaxPts = scServices.assmntMgr.getMaxPts(pId, this.fSession)||1;
+
+			pParent.fMinPts += this.fMinPts;
+			pParent.fScorePts += this.fScorePts;
+			pParent.fMaxPts += this.fMaxPts;
+		}};
+
+		vSubAssmnt.compute(this, "uV6rGM4UVilU1FXk2lqqCh", 1);
+
+		vSubAssmnt.compute(this, "WFOY0oLCVyf1g84oREl85i", 1);
+
+		vSubAssmnt.compute(this, "uGNdsZvrObVYKbQPdHF4c", 1);
+
+		vSubAssmnt.compute(this, "u0Ht6izBx0ixzQQXqVT0De", 1);
+
+		vSubAssmnt.compute(this, "oi2pmuL4pQb3PqwbXug4Pi", 1);
+
+		if(this.fMaxPts < 100) {
+
+				this.fScorePts = this.fMinPts + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (100-this.fMinPts); 
+
+			this.fMaxPts = 100;
+		}
+var vScoreSession = "";
+			scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+						this.refreshScoresFeedbacks();
+		}
+
+		this.handleAssmntPts = function(pEvent){if(pEvent.fId=="uV6rGM4UVilU1FXk2lqqCh" || pEvent.fId=="WFOY0oLCVyf1g84oREl85i" || pEvent.fId=="uGNdsZvrObVYKbQPdHF4c" || pEvent.fId=="u0Ht6izBx0ixzQQXqVT0De" || pEvent.fId=="oi2pmuL4pQb3PqwbXug4Pi" || false) this.computeScore();}
+		scServices.assmntMgr.addEventListener(this);
+		this.computeScore();
+
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	onActionN57 : function(pButton){
+		if(scAssmntMgr.isDisabled(pButton)) return;
+uV6rGM4UVilU1FXk2lqqCh_Alist.fct_reset(); 
+WFOY0oLCVyf1g84oREl85i_Alist.fct_reset(); 
+uGNdsZvrObVYKbQPdHF4c_Alist.fct_reset(); 
+u0Ht6izBx0ixzQQXqVT0De_Alist.fct_reset(); 
+oi2pmuL4pQb3PqwbXug4Pi_Alist.fct_reset(); 
+this.initSeq("play");
+
+		scServices.assmntMgr.commit();
+	},
+	onActionN35 : function(pButton){
+		if(scAssmntMgr.isDisabled(pButton)) return;
+		var vIsOn = scAssmntMgr.isToggleOn(pButton);
+		if(vIsOn) {
+uV6rGM4UVilU1FXk2lqqCh_Alist.fct_play(); 
+WFOY0oLCVyf1g84oREl85i_Alist.fct_play(); 
+uGNdsZvrObVYKbQPdHF4c_Alist.fct_play(); 
+u0Ht6izBx0ixzQQXqVT0De_Alist.fct_play(); 
+oi2pmuL4pQb3PqwbXug4Pi_Alist.fct_play(); 
+scAssmntMgr.setMode(sc$("Vj8gNQJcKFb2PGO6beUyDh_N_score"), "invisible");
+
+		} else {
+uV6rGM4UVilU1FXk2lqqCh_Alist.fct_displaySol(); 
+WFOY0oLCVyf1g84oREl85i_Alist.fct_displaySol(); 
+uGNdsZvrObVYKbQPdHF4c_Alist.fct_displaySol(); 
+u0Ht6izBx0ixzQQXqVT0De_Alist.fct_displaySol(); 
+oi2pmuL4pQb3PqwbXug4Pi_Alist.fct_displaySol(); 
+scAssmntMgr.setMode(sc$("Vj8gNQJcKFb2PGO6beUyDh_N_score"), "visible");
+
+		}
+		scAssmntMgr.setToggleStatus(pButton, ! vIsOn);
+		scServices.assmntMgr.commit();
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.Vj8gNQJcKFb2PGO6beUyDh_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		scServices.assmntMgr.removeEventListener(this);
+		this.computeScore();
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	
+	refreshScoresFeedbacks : function(){
+
+		var vScoreNode = sc$("Vj8gNQJcKFb2PGO6beUyDh_SN73");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("Vj8gNQJcKFb2PGO6beUyDh_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "B",
+	unloadSortKey: "B"
+};
+
+scOnLoads[scOnLoads.length] = Vj8gNQJcKFb2PGO6beUyDh;
+scOnUnloads[scOnUnloads.length] = Vj8gNQJcKFb2PGO6beUyDh;
+</script><div id="Vj8gNQJcKFb2PGO6beUyDh_A" style="display:none;"><div class="quizBody"><div class="subQuiz "><h3 class="subQuiz_ti"><span>Exercice</span></h3><div class="subQuiz_co "><script type="text/JavaScript">
+var uV6rGM4UVilU1FXk2lqqCh_Alist = {
+
+	fId : "uV6rGM4UVilU1FXk2lqqCh",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+		case "play" : {
+		var vForm = document.forms.uV6rGM4UVilU1FXk2lqqCh_Alist_form;
+		this._Sol = {N28:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'VA'==pResp || false;}, score:1},null],min:0,max:1},N2b:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'TAUX'==pResp || false;}, score:1},null],min:0,max:1},N2e:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'VC'==pResp || false;}, score:1},null],min:0,max:1},N31:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'NPM'==pResp || false;}, score:1},null],min:0,max:1},_:null};
+		this.getSolIdx = function(pFieldIndex){
+			var vF = this._Sol[pFieldIndex];
+			var vVal = vForm[pFieldIndex].value;
+			for (var i = 0; i < vF.s.length-1; i++) if(vF.s[i].isMatch(vVal)) return i;
+			return -1;
+		};
+		this.getFieldScore = function(pFieldIndex) {
+			var vI = this.getSolIdx(pFieldIndex);
+			if(vI >= 0) return this._Sol[pFieldIndex].s[vI].score;
+			return 0;
+		};
+		this.refreshResultInput = function(pInput){
+			if(this._resultDisplay == "none") pInput.parentNode.className="";
+			else {
+				var vSol = this._Sol[pInput.name];
+				var vRes = Math.round((this.getFieldScore(pInput.name) - vSol.min) / (vSol.max - vSol.min) * 1);
+				pInput.parentNode.className= "assmntResult_" + vRes;
+			}
+		};
+var vLoadRespSession = "";
+
+		for (var i=0; i < vForm.length; i++) {
+			var vFi = vForm.elements[i];
+			this.setInteraction(vFi, "enabled");
+			vFi.value = vLoadRespSession == null ? "" : scServices.assmntMgr.getResponse(this.fId, vLoadRespSession, vFi.name) || "";
+		}
+	this.refreshResult("none");
+
+
+		this.setSolution('collapsed', 'collapsed');
+scAssmntMgr.setMode(sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_N_score"), "invisible");
+var vRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, vRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, vRespSession, "attempt");
+		this.setResp = function(pInput) {
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, pInput.name, pInput.value);
+			this.computeScore();
+			scServices.assmntMgr.commit();
+			this.refreshResultInput(pInput);
+		}				
+
+		this.computeScore = function() {
+
+			this.fMinPts = 0;
+			this.fMaxPts = 0;
+			for(var vF in this._Sol) if(vF!="_") {this.fMinPts += this._Sol[vF].min; this.fMaxPts += this._Sol[vF].max;}
+			this.fScorePts = this.getFieldScore("N28")+this.getFieldScore("N2b")+this.getFieldScore("N2e")+this.getFieldScore("N31")+0;
+
+				this.fScorePts = 0 + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (1 - 0); 
+
+			this.fMinPts = 0;
+
+			this.fMaxPts = 1;
+
+			//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+			if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+			this.refreshScoresFeedbacks();
+		}
+
+if(vRespSession != vLoadRespSession) for (var i=0; i < vForm.length; i++) scServices.assmntMgr.setResponse(this.fId, vRespSession, vForm.elements[i].name, vForm.elements[i].value);
+this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	fct_play : function(){
+this.initSeq("play");
+
+	},
+	fct_reset : function(){
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+	},
+	fct_displaySol : function(){
+this.setSolution('collapsed', 'visible'); scAssmntMgr.setMode(sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_N_globalExp"), "visible");
+this.refreshResult("addClass");scAssmntMgr.setMode(sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_N_score"), "visible");
+var vForm=document.forms.uV6rGM4UVilU1FXk2lqqCh_Alist_form; for (var i=0; i < vForm.length; i++) this.setInteraction(vForm.elements[i], "disabled"); 
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.uV6rGM4UVilU1FXk2lqqCh_Alist_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	refreshScoresFeedbacks : function(){
+		
+
+		var vScoreNode = sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_SN85");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	setSolution : function(pIfRight, pIfNotBest){
+		for(var vF in this._Sol) if(vF != "_") scAssmntMgr.setMode(sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_X_"+vF), this.getSolIdx(vF)==0 ? pIfRight || "collapsed" : pIfNotBest || "collapsed");
+	},
+	setInteraction : function(pElt, pMode){
+		if(!pElt) return;
+		switch(pMode) {
+		case "collapsed" :
+			pElt.style.display = "none";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "invisible" :
+			pElt.style.display = "";
+			pElt.style.visibility = "hidden";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "enabled" : 
+		case "disabled" : 
+			pElt.disabled = (pMode=="disabled");
+		default :
+			pElt.style.display = "";
+			pElt.style.visibility = "visible";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+		}
+	},
+	refreshResult : function(pMode){
+		this._resultDisplay = pMode || "none";
+		var vForm = document.forms.uV6rGM4UVilU1FXk2lqqCh_Alist_form;
+		for (var i=0; i < vForm.length; i++) this.refreshResultInput(vForm.elements[i]);
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("uV6rGM4UVilU1FXk2lqqCh_Alist_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = uV6rGM4UVilU1FXk2lqqCh_Alist;
+scOnUnloads[scOnUnloads.length] = uV6rGM4UVilU1FXk2lqqCh_Alist;
+</script><div id="uV6rGM4UVilU1FXk2lqqCh_Alist_A" style="display:none;"><div class="quizBody"><div class="question"><div class="rBk "><p>Remplir le texte en utilisant VA, VPM, NPM, VC ou TAUX.</p></div></div><div class="response" aria-live="polite"><form action="javascript:void(0);" name="uV6rGM4UVilU1FXk2lqqCh_Alist_form" id="uV6rGM4UVilU1FXk2lqqCh_Alist_form"><p>Un client de la banque vous demande de faire une simulation de placement. Avec 5000&euro; (<span class="txt_gap_tl "><span><input name="N28" type="text" size="6" onblur="uV6rGM4UVilU1FXk2lqqCh_Alist.setResp(this);" class="gapInput "></span><span id="uV6rGM4UVilU1FXk2lqqCh_Alist_X_N28" class="gapAnswer "><span>VA</span></span></span>) &agrave; placer, vous lui proposez un int&eacute;r&ecirc;t de 5% (<span class="txt_gap_tl "><span><input name="N2b" type="text" size="6" onblur="uV6rGM4UVilU1FXk2lqqCh_Alist.setResp(this);" class="gapInput "></span><span id="uV6rGM4UVilU1FXk2lqqCh_Alist_X_N2b" class="gapAnswer "><span>TAUX</span></span></span>) et lui expliquez qu'il peut s'attendre &agrave; atteindre les 6000&euro; (<span class="txt_gap_tl "><span><input name="N2e" type="text" size="6" onblur="uV6rGM4UVilU1FXk2lqqCh_Alist.setResp(this);" class="gapInput "></span><span id="uV6rGM4UVilU1FXk2lqqCh_Alist_X_N2e" class="gapAnswer "><span>VC</span></span></span>) dans moins de 4 ans (<span class="txt_gap_tl "><span><input name="N31" type="text" size="6" onblur="uV6rGM4UVilU1FXk2lqqCh_Alist.setResp(this);" class="gapInput "></span><span id="uV6rGM4UVilU1FXk2lqqCh_Alist_X_N31" class="gapAnswer "><span>NPM</span></span></span>).</p></form></div><div class="toolbar"><span class="scoreBox"><span class="score " aria-live="polite" id="uV6rGM4UVilU1FXk2lqqCh_Alist_N_score"><span id="uV6rGM4UVilU1FXk2lqqCh_Alist_SN85"><span></span></span></span></span></div></div></div></div></div><div class="subQuiz "><h3 class="subQuiz_ti"><span>Exercice</span></h3><div class="subQuiz_co "><script type="text/JavaScript">
+var WFOY0oLCVyf1g84oREl85i_Alist = {
+
+	fId : "WFOY0oLCVyf1g84oREl85i",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+		case "play" : {
+		var vForm = document.forms.WFOY0oLCVyf1g84oREl85i_Alist_form;
+		this._Sol = {N54:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'VA'==pResp || false;}, score:1},null],min:0,max:1},N57:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'NPM'==pResp || false;}, score:1},null],min:0,max:1},N5a:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'TAUX'==pResp || false;}, score:1},null],min:0,max:1},N5d:{s:[{isMatch:function(pResp){if(typeof pResp == 'undefined') return false; pResp=pResp.toUpperCase(); return 'VPM'==pResp || false;}, score:1},null],min:0,max:1},_:null};
+		this.getSolIdx = function(pFieldIndex){
+			var vF = this._Sol[pFieldIndex];
+			var vVal = vForm[pFieldIndex].value;
+			for (var i = 0; i < vF.s.length-1; i++) if(vF.s[i].isMatch(vVal)) return i;
+			return -1;
+		};
+		this.getFieldScore = function(pFieldIndex) {
+			var vI = this.getSolIdx(pFieldIndex);
+			if(vI >= 0) return this._Sol[pFieldIndex].s[vI].score;
+			return 0;
+		};
+		this.refreshResultInput = function(pInput){
+			if(this._resultDisplay == "none") pInput.parentNode.className="";
+			else {
+				var vSol = this._Sol[pInput.name];
+				var vRes = Math.round((this.getFieldScore(pInput.name) - vSol.min) / (vSol.max - vSol.min) * 1);
+				pInput.parentNode.className= "assmntResult_" + vRes;
+			}
+		};
+var vLoadRespSession = "";
+
+		for (var i=0; i < vForm.length; i++) {
+			var vFi = vForm.elements[i];
+			this.setInteraction(vFi, "enabled");
+			vFi.value = vLoadRespSession == null ? "" : scServices.assmntMgr.getResponse(this.fId, vLoadRespSession, vFi.name) || "";
+		}
+	this.refreshResult("none");
+
+
+		this.setSolution('collapsed', 'collapsed');
+scAssmntMgr.setMode(sc$("WFOY0oLCVyf1g84oREl85i_Alist_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("WFOY0oLCVyf1g84oREl85i_Alist_N_score"), "invisible");
+var vRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, vRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, vRespSession, "attempt");
+		this.setResp = function(pInput) {
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, pInput.name, pInput.value);
+			this.computeScore();
+			scServices.assmntMgr.commit();
+			this.refreshResultInput(pInput);
+		}				
+
+		this.computeScore = function() {
+
+			this.fMinPts = 0;
+			this.fMaxPts = 0;
+			for(var vF in this._Sol) if(vF!="_") {this.fMinPts += this._Sol[vF].min; this.fMaxPts += this._Sol[vF].max;}
+			this.fScorePts = this.getFieldScore("N54")+this.getFieldScore("N57")+this.getFieldScore("N5a")+this.getFieldScore("N5d")+0;
+
+				this.fScorePts = 0 + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (1 - 0); 
+
+			this.fMinPts = 0;
+
+			this.fMaxPts = 1;
+
+			//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+			if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+			this.refreshScoresFeedbacks();
+		}
+
+if(vRespSession != vLoadRespSession) for (var i=0; i < vForm.length; i++) scServices.assmntMgr.setResponse(this.fId, vRespSession, vForm.elements[i].name, vForm.elements[i].value);
+this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	fct_play : function(){
+this.initSeq("play");
+
+	},
+	fct_reset : function(){
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+	},
+	fct_displaySol : function(){
+this.setSolution('collapsed', 'visible'); scAssmntMgr.setMode(sc$("WFOY0oLCVyf1g84oREl85i_Alist_N_globalExp"), "visible");
+this.refreshResult("addClass");scAssmntMgr.setMode(sc$("WFOY0oLCVyf1g84oREl85i_Alist_N_score"), "visible");
+var vForm=document.forms.WFOY0oLCVyf1g84oREl85i_Alist_form; for (var i=0; i < vForm.length; i++) this.setInteraction(vForm.elements[i], "disabled"); 
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.WFOY0oLCVyf1g84oREl85i_Alist_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	refreshScoresFeedbacks : function(){
+		
+
+		var vScoreNode = sc$("WFOY0oLCVyf1g84oREl85i_Alist_SN85");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	setSolution : function(pIfRight, pIfNotBest){
+		for(var vF in this._Sol) if(vF != "_") scAssmntMgr.setMode(sc$("WFOY0oLCVyf1g84oREl85i_Alist_X_"+vF), this.getSolIdx(vF)==0 ? pIfRight || "collapsed" : pIfNotBest || "collapsed");
+	},
+	setInteraction : function(pElt, pMode){
+		if(!pElt) return;
+		switch(pMode) {
+		case "collapsed" :
+			pElt.style.display = "none";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "invisible" :
+			pElt.style.display = "";
+			pElt.style.visibility = "hidden";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "enabled" : 
+		case "disabled" : 
+			pElt.disabled = (pMode=="disabled");
+		default :
+			pElt.style.display = "";
+			pElt.style.visibility = "visible";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+		}
+	},
+	refreshResult : function(pMode){
+		this._resultDisplay = pMode || "none";
+		var vForm = document.forms.WFOY0oLCVyf1g84oREl85i_Alist_form;
+		for (var i=0; i < vForm.length; i++) this.refreshResultInput(vForm.elements[i]);
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("WFOY0oLCVyf1g84oREl85i_Alist_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = WFOY0oLCVyf1g84oREl85i_Alist;
+scOnUnloads[scOnUnloads.length] = WFOY0oLCVyf1g84oREl85i_Alist;
+</script><div id="WFOY0oLCVyf1g84oREl85i_Alist_A" style="display:none;"><div class="quizBody"><div class="question"><div class="rBk "><p>Remplir le texte en utilisant VA, VPM, NPM, VC et TAUX.</p></div></div><div class="response" aria-live="polite"><form action="javascript:void(0);" name="WFOY0oLCVyf1g84oREl85i_Alist_form" id="WFOY0oLCVyf1g84oREl85i_Alist_form"><p>Un client de la banque vous demande de faire une simulation de pr&ecirc;t. Il souhaite obtenir un pr&ecirc;t de 5000&euro; (<span class="txt_gap_tl "><span><input name="N54" type="text" size="6" onblur="WFOY0oLCVyf1g84oREl85i_Alist.setResp(this);" class="gapInput "></span><span id="WFOY0oLCVyf1g84oREl85i_Alist_X_N54" class="gapAnswer "><span>VA</span></span></span>) sur 2 ans (<span class="txt_gap_tl "><span><input name="N57" type="text" size="6" onblur="WFOY0oLCVyf1g84oREl85i_Alist.setResp(this);" class="gapInput "></span><span id="WFOY0oLCVyf1g84oREl85i_Alist_X_N57" class="gapAnswer "><span>NPM</span></span></span>). Vous lui proposez un int&eacute;r&ecirc;t de 5% (<span class="txt_gap_tl "><span><input name="N5a" type="text" size="6" onblur="WFOY0oLCVyf1g84oREl85i_Alist.setResp(this);" class="gapInput "></span><span id="WFOY0oLCVyf1g84oREl85i_Alist_X_N5a" class="gapAnswer "><span>TAUX</span></span></span>) et lui expliquez qu'il devra rembourser 219,36&euro; (<span class="txt_gap_tl "><span><input name="N5d" type="text" size="6" onblur="WFOY0oLCVyf1g84oREl85i_Alist.setResp(this);" class="gapInput "></span><span id="WFOY0oLCVyf1g84oREl85i_Alist_X_N5d" class="gapAnswer "><span>VPM</span></span></span>) par mois.</p></form></div><div class="toolbar"><span class="scoreBox"><span class="score " aria-live="polite" id="WFOY0oLCVyf1g84oREl85i_Alist_N_score"><span id="WFOY0oLCVyf1g84oREl85i_Alist_SN85"><span></span></span></span></span></div></div></div></div></div><div class="subQuiz "><h3 class="subQuiz_ti"><span>Exercice</span></h3><div class="subQuiz_co "><script type="text/JavaScript">
+var uGNdsZvrObVYKbQPdHF4c_Alist = {
+
+	fId : "uGNdsZvrObVYKbQPdHF4c",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+		case "play" : {
+		var vForm = document.forms.uGNdsZvrObVYKbQPdHF4c_Alist_form;
+		this._Sol = {field:{s:[{isMatch:function(pResp){try{if(typeof pResp == 'undefined') return false; return Number(pResp.replace(",",".")) == Number('0.00001') && true;}catch(e){return false;}}, score:1},null],min:0,max:1},_:null};
+		this.getSolIdx = function(pFieldIndex){
+			var vF = this._Sol[pFieldIndex];
+			var vVal = vForm[pFieldIndex].value;
+			for (var i = 0; i < vF.s.length-1; i++) if(vF.s[i].isMatch(vVal)) return i;
+			return -1;
+		};
+		this.getFieldScore = function(pFieldIndex) {
+			var vI = this.getSolIdx(pFieldIndex);
+			if(vI >= 0) return this._Sol[pFieldIndex].s[vI].score;
+			return 0;
+		};
+		this.refreshResultInput = function(pInput){
+			if(this._resultDisplay == "none") pInput.parentNode.className="";
+			else {
+				var vSol = this._Sol[pInput.name];
+				var vRes = Math.round((this.getFieldScore(pInput.name) - vSol.min) / (vSol.max - vSol.min) * 1);
+				pInput.parentNode.className= "assmntResult_" + vRes;
+			}
+		};
+var vLoadRespSession = "";
+
+		for (var i=0; i < vForm.length; i++) {
+			var vFi = vForm.elements[i];
+			this.setInteraction(vFi, "enabled");
+			vFi.value = vLoadRespSession == null ? "" : scServices.assmntMgr.getResponse(this.fId, vLoadRespSession, vFi.name) || "";
+		}
+	this.refreshResult("");
+
+
+		this.setSolution('collapsed', 'collapsed');
+scAssmntMgr.setMode(sc$("uGNdsZvrObVYKbQPdHF4c_Alist_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("uGNdsZvrObVYKbQPdHF4c_Alist_N_score"), "invisible");
+var vRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, vRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, vRespSession, "attempt");
+		this.setResp = function(pInput) {
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, pInput.name, pInput.value);
+			this.computeScore();
+			scServices.assmntMgr.commit();
+			this.refreshResultInput(pInput);
+		}				
+
+		this.computeScore = function() {
+
+			this.fMinPts = 0;
+			this.fMaxPts = 0;
+			for(var vF in this._Sol) if(vF!="_") {this.fMinPts += this._Sol[vF].min; this.fMaxPts += this._Sol[vF].max;}
+			this.fScorePts = this.getFieldScore("field")+0;
+
+				this.fScorePts = 0 + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (1 - 0); 
+
+			this.fMinPts = 0;
+
+			this.fMaxPts = 1;
+
+			//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+			if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+			this.refreshScoresFeedbacks();
+		}
+
+if(vRespSession != vLoadRespSession) for (var i=0; i < vForm.length; i++) scServices.assmntMgr.setResponse(this.fId, vRespSession, vForm.elements[i].name, vForm.elements[i].value);
+this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	fct_play : function(){
+this.initSeq("play");
+
+	},
+	fct_reset : function(){
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+	},
+	fct_displaySol : function(){
+this.setSolution('collapsed', 'visible'); scAssmntMgr.setMode(sc$("uGNdsZvrObVYKbQPdHF4c_Alist_N_globalExp"), "visible");
+scAssmntMgr.setMode(sc$("uGNdsZvrObVYKbQPdHF4c_Alist_N_score"), "visible");
+var vForm=document.forms.uGNdsZvrObVYKbQPdHF4c_Alist_form; for (var i=0; i < vForm.length; i++) this.setInteraction(vForm.elements[i], "disabled"); this.refreshResult("addClass");
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.uGNdsZvrObVYKbQPdHF4c_Alist_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	refreshScoresFeedbacks : function(){
+		
+
+		var vScoreNode = sc$("uGNdsZvrObVYKbQPdHF4c_Alist_SN8e");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	setSolution : function(pIfRight, pIfNotBest){
+		for(var vF in this._Sol) if(vF != "_") scAssmntMgr.setMode(sc$("uGNdsZvrObVYKbQPdHF4c_Alist_X_"+vF), this.getSolIdx(vF)==0 ? pIfRight || "collapsed" : pIfNotBest || "collapsed");
+	},
+	setInteraction : function(pElt, pMode){
+		if(!pElt) return;
+		switch(pMode) {
+		case "collapsed" :
+			pElt.style.display = "none";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "invisible" :
+			pElt.style.display = "";
+			pElt.style.visibility = "hidden";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "enabled" : 
+		case "disabled" : 
+			pElt.disabled = (pMode=="disabled");
+		default :
+			pElt.style.display = "";
+			pElt.style.visibility = "visible";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+		}
+	},
+	refreshResult : function(pMode){
+		this._resultDisplay = pMode || "none";
+		var vForm = document.forms.uGNdsZvrObVYKbQPdHF4c_Alist_form;
+		for (var i=0; i < vForm.length; i++) this.refreshResultInput(vForm.elements[i]);
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("uGNdsZvrObVYKbQPdHF4c_Alist_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = uGNdsZvrObVYKbQPdHF4c_Alist;
+scOnUnloads[scOnUnloads.length] = uGNdsZvrObVYKbQPdHF4c_Alist;
+</script><div id="uGNdsZvrObVYKbQPdHF4c_Alist_A" style="display:none;"><div class="quizBody"><div class="question"><div class="rBk "><p>Combien d'ann&eacute;es cela prendrait-il d'obtenir 15000&euro; avec un placement de 12000&euro; et un taux d'int&eacute;r&ecirc;t de 5%</p></div></div><div class="response" aria-live="polite"><form action="javascript:void(0);" name="uGNdsZvrObVYKbQPdHF4c_Alist_form" id="uGNdsZvrObVYKbQPdHF4c_Alist_form"><div class="exoAsw"><span><input type="text" name="field" onblur="uGNdsZvrObVYKbQPdHF4c_Alist.setResp(this);" class="exoInput "></span><span id="uGNdsZvrObVYKbQPdHF4c_Alist_X_field" class="exoSol "><span>4,57353557039297</span></span></div></form></div><div class="globalExp " id="uGNdsZvrObVYKbQPdHF4c_Alist_N_globalExp" aria-live="polite"><div class="rBk "><p>Un peu plus de quatre ans et demi.</p></div></div><div class="toolbar"><span class="scoreBox"><span class="score " aria-live="polite" id="uGNdsZvrObVYKbQPdHF4c_Alist_N_score"><span id="uGNdsZvrObVYKbQPdHF4c_Alist_SN8e"><span></span></span></span></span></div></div></div></div></div><div class="subQuiz "><h3 class="subQuiz_ti"><span>Exercice</span></h3><div class="subQuiz_co "><script type="text/JavaScript">
+var u0Ht6izBx0ixzQQXqVT0De_Alist = {
+
+	fId : "u0Ht6izBx0ixzQQXqVT0De",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+		case "play" : {
+		var vForm = document.forms.u0Ht6izBx0ixzQQXqVT0De_Alist_form;
+		for (var i=0; i < vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input.length; i++) {
+			vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].disabled = false;
+			vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].checked = false;
+		}
+
+var vLoadRespSession = "";
+for (var i=0; i < vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input.length; i++) {
+			var vInput = vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i];
+			vInput.checked = scServices.assmntMgr.getResponse(this.fId, vLoadRespSession, vInput.value);
+		}
+
+		this.setSolution(false);
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_responseTi"), "invisible");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N0_choiceExp"), "collapsed");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N1_choiceExp"), "collapsed");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_score"), "invisible");
+var vRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, vRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, vRespSession, "attempt");
+		this.setResp = function(pInput, pIdx) {
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, pIdx, pInput.checked);
+
+			this.computeScore();
+			scServices.assmntMgr.commit();
+		}				
+
+		this.computeScore = function() {
+
+		this.fMinPts = 0;
+		this.fMaxPts = 1;
+		this.fScorePts = true && vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[0].checked && ! vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[1].checked ? this.fMaxPts : this.fMinPts;
+
+				this.fScorePts = 0 + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (1 - 0); 
+
+			this.fMinPts = 0;
+
+			this.fMaxPts = 1;
+
+		//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+		if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+			this.refreshScoresFeedbacks();
+		}
+
+if(vRespSession != vLoadRespSession) {
+for (var i=0; i < vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input.length; i++) {
+			var vInput = vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i];
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, vInput.value, vInput.checked);
+		}
+}
+this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	fct_play : function(){
+this.initSeq("play");
+
+	},
+	fct_displaySol : function(){
+var vForm=document.forms.u0Ht6izBx0ixzQQXqVT0De_Alist_form; for (var i=0; i < vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input.length; i++) vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].disabled = true; this.setSolution(true); scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_globalExp"), "visible");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N0_choiceExp"), "visible"); scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N1_choiceExp"), "visible"); scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_score"), "visible");
+scAssmntMgr.setMode(sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_N_responseTi"), "visible");
+
+	},
+	fct_reset : function(){
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.u0Ht6izBx0ixzQQXqVT0De_Alist_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	refreshScoresFeedbacks : function(){
+		
+
+		var vScoreNode = sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_SNa4");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	solIsShown : false,
+	setSolution : function(pShown){
+		var vTRs = null;
+		var vForm = document.forms.u0Ht6izBx0ixzQQXqVT0De_Alist_form;
+		var vTable = scPaLib.findNode("chi:" ,vForm);
+		if (vTable.nodeName.toLowerCase()=="table") vTRs = scPaLib.findNodes("chi:/chi:tr" ,vTable);
+		else vTRs = scPaLib.findNodes("chi:" ,vTable);
+	
+		if(!pShown && this.solIsShown) {
+			for(var i=0; i<vTRs.length; i++){
+				var vTR = vTRs[i]; 
+				var vOffs = vTR.className.indexOf("assmntSol");
+				if(vOffs>=0) vTR.className = vTR.className.substring(0, vOffs) + vTR.className.substring(vOffs+14);
+
+				var vSol = vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_sol[i];
+				scAssmntMgr.setMode(vSol.parentNode, "collapsed");
+				vSol.checked = false;
+				vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].removeAttribute("aria-hidden");
+
+			}
+		} else if(pShown && ! this.solIsShown) {
+
+			var i = 0, vTR = null;
+
+			var vSol = vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_sol[i];
+			scAssmntMgr.setMode(vSol.parentNode, "visible");
+			vSol.checked = true;
+			vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].setAttribute("aria-hidden", "true");
+
+			vTR = vTRs[i++];
+			vTR.className = "assmntSolCheck " + vTR.className;
+
+			var vSol = vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_sol[i];
+			scAssmntMgr.setMode(vSol.parentNode, "visible");
+			vSol.checked = false;
+			vForm.u0Ht6izBx0ixzQQXqVT0De_Alist_input[i].setAttribute("aria-hidden", "true");
+
+			vTR = vTRs[i++];
+			vTR.className = "assmntSolUnche " + vTR.className;
+
+		}
+		this.solIsShown = pShown;
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("u0Ht6izBx0ixzQQXqVT0De_Alist_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = u0Ht6izBx0ixzQQXqVT0De_Alist;
+scOnUnloads[scOnUnloads.length] = u0Ht6izBx0ixzQQXqVT0De_Alist;
+</script><div id="u0Ht6izBx0ixzQQXqVT0De_Alist_A" style="display:none;"><div class="quizBody"><div class="question"><div class="rBk "><p>Un ami vous dit qu'il a plac&eacute; 10 000&euro; &agrave; 5% alors que vous avez obtenu un taux de 7% pour vos 8000&euro; plac&eacute;s.</p><p>Il se vante de pouvoir parvenir &agrave; 15000&euro; plus rapidement que vous&nbsp;: a-t-il raison&nbsp;?</p></div></div><div class="response" aria-live="polite"><h4 id="u0Ht6izBx0ixzQQXqVT0De_Alist_N_responseTi" class="response_ti"><span aria-hidden="true"><span>Votre choix</span></span><span><span>Choix attendu</span></span><span aria-hidden="true"><span>R&eacute;ponse</span></span></h4><form action name="u0Ht6izBx0ixzQQXqVT0De_Alist_form" id="u0Ht6izBx0ixzQQXqVT0De_Alist_form"><ul class="choiceList "><li class="choiceList_ch "><div class="choiceList_in "><input type="checkbox" name="u0Ht6izBx0ixzQQXqVT0De_Alist_input" id="u0Ht6izBx0ixzQQXqVT0De_Alist_in0" value="0" onclick="u0Ht6izBx0ixzQQXqVT0De_Alist.setResp(this, 0);" aria-labelledby="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl0"></div><div class="choiceList_sol " style="display:none;"><input type="checkbox" name="u0Ht6izBx0ixzQQXqVT0De_Alist_sol" id="u0Ht6izBx0ixzQQXqVT0De_Alist_sol0" value disabled aria-labelledby="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl0"></div><div class="choiceList_la " id="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl0"><div class="choice"><div class="label"><p>Oui mais ce type est un naze, riche ou non.</p></div></div></div></li><li class="choiceList_ch "><div class="choiceList_in "><input type="checkbox" name="u0Ht6izBx0ixzQQXqVT0De_Alist_input" id="u0Ht6izBx0ixzQQXqVT0De_Alist_in1" value="1" onclick="u0Ht6izBx0ixzQQXqVT0De_Alist.setResp(this, 1);" aria-labelledby="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl1"></div><div class="choiceList_sol " style="display:none;"><input type="checkbox" name="u0Ht6izBx0ixzQQXqVT0De_Alist_sol" id="u0Ht6izBx0ixzQQXqVT0De_Alist_sol1" value disabled aria-labelledby="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl1"></div><div class="choiceList_la " id="u0Ht6izBx0ixzQQXqVT0De_Alist_lbl1"><div class="choice"><div class="label"><p>Non, ce type est naze et il atteindra la richesse moins vite que moi.</p></div></div></div></li></ul></form></div><div class="globalExp " id="u0Ht6izBx0ixzQQXqVT0De_Alist_N_globalExp" aria-live="polite"><div class="rBk "><p>=NPM(0,05; 0; -10000; 15000) donne 8,31038622252057 quand =NPM(0,07; 0; -8000; 15000) donne </p><p>9,29088407176294. Il est donc plus long (plus de 9 ans) d'atteindre les 15000&euro; avec les 8000&euro;, m&ecirc;me avec un meilleur taux de 7%.</p></div></div><div class="toolbar"><span class="scoreBox"><span class="score " aria-live="polite" id="u0Ht6izBx0ixzQQXqVT0De_Alist_N_score"><span id="u0Ht6izBx0ixzQQXqVT0De_Alist_SNa4"><span></span></span></span></span></div></div></div></div></div><div class="subQuiz "><h3 class="subQuiz_ti"><span>Exercice</span></h3><div class="subQuiz_co "><script type="text/JavaScript">
+var oi2pmuL4pQb3PqwbXug4Pi_Alist = {
+
+	fId : "oi2pmuL4pQb3PqwbXug4Pi",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+
+		case "play" : {
+		var vForm = document.forms.oi2pmuL4pQb3PqwbXug4Pi_Alist_form;
+		this._Sol = {field:{s:[{isMatch:function(pResp){try{if(typeof pResp == 'undefined') return false; return Number(pResp.replace(",",".")) == Number('0.01') && true;}catch(e){return false;}}, score:1},null],min:0,max:1},_:null};
+		this.getSolIdx = function(pFieldIndex){
+			var vF = this._Sol[pFieldIndex];
+			var vVal = vForm[pFieldIndex].value;
+			for (var i = 0; i < vF.s.length-1; i++) if(vF.s[i].isMatch(vVal)) return i;
+			return -1;
+		};
+		this.getFieldScore = function(pFieldIndex) {
+			var vI = this.getSolIdx(pFieldIndex);
+			if(vI >= 0) return this._Sol[pFieldIndex].s[vI].score;
+			return 0;
+		};
+		this.refreshResultInput = function(pInput){
+			if(this._resultDisplay == "none") pInput.parentNode.className="";
+			else {
+				var vSol = this._Sol[pInput.name];
+				var vRes = Math.round((this.getFieldScore(pInput.name) - vSol.min) / (vSol.max - vSol.min) * 1);
+				pInput.parentNode.className= "assmntResult_" + vRes;
+			}
+		};
+var vLoadRespSession = "";
+
+		for (var i=0; i < vForm.length; i++) {
+			var vFi = vForm.elements[i];
+			this.setInteraction(vFi, "enabled");
+			vFi.value = vLoadRespSession == null ? "" : scServices.assmntMgr.getResponse(this.fId, vLoadRespSession, vFi.name) || "";
+		}
+	this.refreshResult("");
+
+
+		this.setSolution('collapsed', 'collapsed');
+scAssmntMgr.setMode(sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_N_globalExp"), "collapsed");
+scAssmntMgr.setMode(sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_N_score"), "invisible");
+var vRespSession = "";
+		if(scServices.assmntMgr.getCompletionStatus(this.fId, vRespSession)=="notAttempt") scServices.assmntMgr.setCompletionStatus(this.fId, vRespSession, "attempt");
+		this.setResp = function(pInput) {
+			scServices.assmntMgr.setResponse(this.fId, vRespSession, pInput.name, pInput.value);
+			this.computeScore();
+			scServices.assmntMgr.commit();
+			this.refreshResultInput(pInput);
+		}				
+
+		this.computeScore = function() {
+
+			this.fMinPts = 0;
+			this.fMaxPts = 0;
+			for(var vF in this._Sol) if(vF!="_") {this.fMinPts += this._Sol[vF].min; this.fMaxPts += this._Sol[vF].max;}
+			this.fScorePts = this.getFieldScore("field")+0;
+
+				this.fScorePts = 0 + (this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * (1 - 0); 
+
+			this.fMinPts = 0;
+
+			this.fMaxPts = 1;
+
+			//alert("score:::::"+this.fMinPts+" - "+this.fScorePts+" - "+this.fMaxPts);
+var vScoreSession = "";
+			if(this.fScorePts != null) scServices.assmntMgr.setPts(this.fId, vScoreSession, this.fMinPts, this.fScorePts, this.fMaxPts);
+
+			this.refreshScoresFeedbacks();
+		}
+
+if(vRespSession != vLoadRespSession) for (var i=0; i < vForm.length; i++) scServices.assmntMgr.setResponse(this.fId, vRespSession, vForm.elements[i].name, vForm.elements[i].value);
+this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+	fct_play : function(){
+this.initSeq("play");
+
+	},
+	fct_reset : function(){
+var vSess="";
+scServices.assmntMgr.resetResponses(this.fId, vSess);
+scServices.assmntMgr.setPts(this.fId, vSess, null, null, null); 
+this.initSeq("play");
+
+	},
+	fct_displaySol : function(){
+this.setSolution('collapsed', 'visible'); scAssmntMgr.setMode(sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_N_globalExp"), "visible");
+scAssmntMgr.setMode(sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_N_score"), "visible");
+var vForm=document.forms.oi2pmuL4pQb3PqwbXug4Pi_Alist_form; for (var i=0; i < vForm.length; i++) this.setInteraction(vForm.elements[i], "disabled"); this.refreshResult("addClass");
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.oi2pmuL4pQb3PqwbXug4Pi_Alist_form;
+		switch(this.fCurSeq) {
+
+	case "play" : {
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "play";
+	},
+
+	refreshScoresFeedbacks : function(){
+		
+
+		var vScoreNode = sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_SN8e");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	setSolution : function(pIfRight, pIfNotBest){
+		for(var vF in this._Sol) if(vF != "_") scAssmntMgr.setMode(sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_X_"+vF), this.getSolIdx(vF)==0 ? pIfRight || "collapsed" : pIfNotBest || "collapsed");
+	},
+	setInteraction : function(pElt, pMode){
+		if(!pElt) return;
+		switch(pMode) {
+		case "collapsed" :
+			pElt.style.display = "none";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "invisible" :
+			pElt.style.display = "";
+			pElt.style.visibility = "hidden";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+			break;
+		case "enabled" : 
+		case "disabled" : 
+			pElt.disabled = (pMode=="disabled");
+		default :
+			pElt.style.display = "";
+			pElt.style.visibility = "visible";
+			if("scSiLib" in window) scSiLib.fireResizedNode(pElt);
+		}
+	},
+	refreshResult : function(pMode){
+		this._resultDisplay = pMode || "none";
+		var vForm = document.forms.oi2pmuL4pQb3PqwbXug4Pi_Alist_form;
+		for (var i=0; i < vForm.length; i++) this.refreshResultInput(vForm.elements[i]);
+	},
+	onLoad: function(){
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("oi2pmuL4pQb3PqwbXug4Pi_Alist_A");
+		vNodeRoot.style.display = "block"; 
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = oi2pmuL4pQb3PqwbXug4Pi_Alist;
+scOnUnloads[scOnUnloads.length] = oi2pmuL4pQb3PqwbXug4Pi_Alist;
+</script><div id="oi2pmuL4pQb3PqwbXug4Pi_Alist_A" style="display:none;"><div class="quizBody"><div class="question"><div class="rBk "><p>On souhaite obtenir un pr&ecirc;t de 5000&euro; sur 3 ans. Vous vous voyez proposer un int&eacute;r&ecirc;t de 7%. &Agrave; quel montant s'&eacute;l&egrave;vent les mensualit&eacute;s&nbsp;?</p></div></div><div class="response" aria-live="polite"><form action="javascript:void(0);" name="oi2pmuL4pQb3PqwbXug4Pi_Alist_form" id="oi2pmuL4pQb3PqwbXug4Pi_Alist_form"><div class="exoAsw"><span><input type="text" name="field" onblur="oi2pmuL4pQb3PqwbXug4Pi_Alist.setResp(this);" class="exoInput "></span><span id="oi2pmuL4pQb3PqwbXug4Pi_Alist_X_field" class="exoSol "><span>154,39</span></span></div></form></div><div class="globalExp " id="oi2pmuL4pQb3PqwbXug4Pi_Alist_N_globalExp" aria-live="polite"><div class="rBk "><p>=VPM(0,07/12;36; 5000)</p></div></div><div class="toolbar"><span class="scoreBox"><span class="score " aria-live="polite" id="oi2pmuL4pQb3PqwbXug4Pi_Alist_N_score"><span id="oi2pmuL4pQb3PqwbXug4Pi_Alist_SN8e"><span></span></span></span></span></div></div></div></div></div><div class="toolbar"><a role="button" title="Afficher le score et la correction" href="#" onkeydown="scDynUiMgr.handleBtnKeyDwn(event);" onkeyup="scDynUiMgr.handleBtnKeyUp(event);" onclick="Vj8gNQJcKFb2PGO6beUyDh.onActionN35(this); return false;" class="btnQuiz correction " id="Vj8gNQJcKFb2PGO6beUyDh_S_N35"><span>Correction</span></a><a role="button" title="Effacer les r&eacute;ponses" href="#" onkeydown="scDynUiMgr.handleBtnKeyDwn(event);" onkeyup="scDynUiMgr.handleBtnKeyUp(event);" onclick="Vj8gNQJcKFb2PGO6beUyDh.onActionN57(this); return false;" class="btnQuiz reset "><span>Recommencer</span></a><span class="scoreBox"><span class="score " aria-live="polite" id="Vj8gNQJcKFb2PGO6beUyDh_N_score"><span id="Vj8gNQJcKFb2PGO6beUyDh_SN73"><span></span></span></span></span></div></div></div></div></section></div></div><div id="navigation" tabindex="-1"><hr class="hidden"><nav class="pageTurner" role="navigation"><ul><li><a rel="prev" href="FonctionFinance.html" target="_self" class="btnNav prev" title="Pr&eacute;c&eacute;dent (Fonctions financi&egrave;res)"><span>Pr&eacute;c&eacute;dent</span></a></li><li><a rel="next" href="TableauInteret.html" target="_self" class="btnNav next" title="Suivant (Exercice&nbsp;: Remboursement d'emprunt)"><span>Suivant</span></a></li></ul></nav></div></div><div id="toolbox"><nav id="menu" class="pageSelector" role="navigation" tabindex="-1" aria-label="menu principal"><hr class="hidden"><ul class="mnu static" data-totalPages="106"><li class="sel_no anc_no type_l  dpt_0 intro"><div class="lbl type_l" id="module_Contenu_1.html"><a href="module_Contenu_1.html" target="_self" class="item"><span>Introduction</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="MiseEnPage.html"><a href="MiseEnPage.html" target="_self" class="item"><span>Pr&eacute;sentation d'une feuille ou d'un classeur</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="Formules.html"><a href="Formules.html" target="_self" class="item"><span>les formules</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="ComparaisonLogique.html"><a href="ComparaisonLogique.html" target="_self" class="item"><span>Op&eacute;rateurs de comparaisons et Bool&eacute;ens</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="OperateurLogique.html"><a href="OperateurLogique.html" target="_self" class="item"><span>Utilisation du ET et du OU</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_2.html"><a href="module_Contenu_2.html" target="_self" class="item"><span>Trier un tableau</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="Tri.html"><a href="Tri.html" target="_self" class="item"><span>Utilisation du tri</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_3.html"><a href="module_Contenu_3.html" target="_self" class="item"><span>R&eacute;f&eacute;rences relatives et absolues</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="RefAbsRel.html"><a href="RefAbsRel.html" target="_self" class="item"><span>R&eacute;f&eacute;rences absolues et relatives</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_4.html"><a href="module_Contenu_4.html" target="_self" class="item"><span>Fonction SI</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="FonctionSi.html"><a href="FonctionSi.html" target="_self" class="item"><span>Fonction SI</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_5.html"><a href="module_Contenu_5.html" target="_self" class="item"><span>Fonctions NB.SI et SOMME.SI</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="SOMMESI_NBSI.html"><a href="SOMMESI_NBSI.html" target="_self" class="item"><span>Utilisation de somme.si et nb.si</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 practUc"><div class="lbl type_l" id="Exo12.html"><a href="Exo12.html" target="_self" class="item"><span>Exercice&nbsp;: exercice 12&nbsp;: Histogramme</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_6.html"><a href="module_Contenu_6.html" target="_self" class="item"><span>Mise en forme conditionnelle</span></a></div></li><li class="sel_no anc_no type_l  dpt_0 assmntUa"><div class="lbl type_l" id="MiseEnFormeCond.html"><a href="MiseEnFormeCond.html" target="_self" class="item"><span>Mise en forme conditionnelle</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_7.html"><a href="module_Contenu_7.html" target="_self" class="item"><span>Validation de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_8.html"><a href="module_Contenu_8.html" target="_self" class="item"><span>Recherche dans un tableau de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_9.html"><a href="module_Contenu_9.html" target="_self" class="item"><span>Retour sur la validation de donn&eacute;es</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_10.html"><a href="module_Contenu_10.html" target="_self" class="item"><span>Traitement des erreurs</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_11.html"><a href="module_Contenu_11.html" target="_self" class="item"><span>Graphiques</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="gestiontemps.html"><a href="gestiontemps.html" target="_self" class="item"><span>Fonction de gestion du temps</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="solveur.html"><a href="solveur.html" target="_self" class="item"><span>Solveur d'Excel&nbsp;: valeur cible et solveur</span></a></div></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="tcdExcel.html"><a href="tcdExcel.html" target="_self" class="item"><span>Tableau crois&eacute; dynamique</span></a></div></li><li class="sel_no anc_yes type_b  dpt_0 courseUa"><div class="lbl type_b" id="CoursFonctionFi.html"><a href="CoursFonctionFi.html" target="_self" class="item" type="up"><span>Fonctions financi&egrave;res</span></a></div><ul class="sub mnu_open"><li class="sel_no anc_no type_l  dpt_1 expUc"><div class="lbl type_l" id="FonctionFinance.html"><a href="FonctionFinance.html" target="_self" class="item"><span>Fonctions financi&egrave;res</span></a></div></li><li class="sel_yes anc_no type_l  dpt_1 coQuiz"><div class="lbl type_l" id="QcmFi.html"><span class="item"><span>Exercices&nbsp;: Manipulation des Fonctions financi&egrave;res</span></span></div></li><li class="sel_no anc_no type_l  dpt_1 practUc"><div class="lbl type_l" id="TableauInteret.html"><a href="TableauInteret.html" target="_self" class="item"><span>Exercice&nbsp;: Remboursement d'emprunt</span></a></div></li></ul></li><li class="sel_no anc_no type_b  type_b_c dpt_0 courseUa"><div class="lbl type_b" id="module_Contenu_12.html"><a href="module_Contenu_12.html" target="_self" class="item"><span>Exercices compl&eacute;mentaires et examen des ann&eacute;es pr&eacute;c&eacute;dentes</span></a></div></li></ul></nav><div id="tools" tabindex="-1"><hr class="hidden"><nav class="headingSelector" role="navigation"><ul class="mnu"><li class="anc_no home" data-position="uncle"><div class="lbl"><a href="module_Contenu.html" target="_self" class="item" type="index" title="Page d'accueil du module"><span>Accueil</span></a></div></li><li class="anc_yes module" data-position="ancestor"><div class="lbl"><span class="item"><span>Module</span></span></div></li><li class="anc_no tools" data-position="uncle"><div class="lbl"><a href="CoursTableur.html" target="_self" class="item" title="Outils transverses du module"><span>Outils</span></a></div></li></ul></nav></div></div></main><footer id="footer" role="contentinfo" tabindex="-1"><hr class="hidden"><a id="linkSp" target="_blank" href="http://scenari-platform.org" title="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)"><span><img alt="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)" src="../skin/img/tpl/scBtn.png"></span></a></footer></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scMediaMgr.init("des:.mediaPlayer");scImgMgr.init();outMgr.init();</script>
+ </body>
+</html>

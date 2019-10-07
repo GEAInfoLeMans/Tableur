@@ -1,9 +1,9 @@
 /**
  * LICENCE[[
- * Version: MPL 1.1/GPL 2.0/LGPL 2.1/CeCILL 2.O
+ * Version: MPL 2.0/GPL 3.0/LGPL 3.0/CeCILL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with
+ * 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
  *
  * Software distributed under the License is distributed on an "AS IS" basis,
@@ -16,15 +16,15 @@
  * The Initial Developer of the Original Code is 
  * samuel.monsarrat@kelis.fr
  *
- * Portions created by the Initial Developer are Copyright (C) 2009-2015
+ * Portions created by the Initial Developer are Copyright (C) 2009-2017
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either of the GNU General Public License Version 2 or later (the "GPL"),
- * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
- * or the CeCILL Licence Version 2.0 (http://www.cecill.info/licences.en.html),
+ * either of the GNU General Public License Version 3.0 or later (the "GPL"),
+ * or the GNU Lesser General Public License Version 3.0 or later (the "LGPL"),
+ * or the CeCILL Licence Version 2.1 (http://www.cecill.info/licences.en.html),
  * in which case the provisions of the GPL, the LGPL or the CeCILL are applicable
  * instead of those above. If you wish to allow use of your version of this file
  * only under the terms of either the GPL, the LGPL or the CeCILL, and not to allow
@@ -42,6 +42,7 @@ var scImgMgr = {
 	fPathGal : [],
 	fPathZoom : [],
 	fPathImg : [],
+	fPathSvg : [],
 	fAnims : null,
 	fGals : null,
 	fZooms : null,
@@ -59,6 +60,8 @@ var scImgMgr = {
 	fSourceRoot : null,
 	fDisplayRoot : null,
 	fLocalize : true,
+	fMarginStart : "marginLeft",
+	fMarginEnd : "marginRight",
 	fNavie8 : parseFloat(scCoLib.userAgent.substring(scCoLib.userAgent.indexOf("msie")+5)) < 9,
 	fMaxDeviceWidth : Math.min(window.screen.width, window.screen.height),
 	fListeners : {"onOverlayOpen":[],"onOverlayClose":[],"onAnimationOpen":[],"onAnimationClose":[],"onZoomOpen":[],"onZoomClose":[]}
@@ -87,6 +90,10 @@ scImgMgr.init = function() {
 	// Init image animations...
 	try{
 		if (!("scDynUiMgr" in window)) throw "Library scDynUiMgr not found.";
+		if(this.xReadStyle(document.body.parentNode, "direction") == "rtl") {
+			this.fMarginStart = "marginRight";
+			this.fMarginEnd = "marginLeft";
+		}
 		for(var i=0; i<this.fPathAnim.length; i++) {
 			var vAnims = scPaLib.findNodes(this.fPathAnim[i].fPath);
 			for(var j=0; j<vAnims.length; j++) {
@@ -108,6 +115,8 @@ scImgMgr.init = function() {
 		}
 		// Load images ...
 		this.xInitImgs(this.fSourceRoot);
+		// Mend svgs ...
+		this.xInitSvgs(this.fSourceRoot);
 		//Register listeners...
 		scDynUiMgr.collBlk.addOpenListener(this.sCollBlkOpen);
 		scDynUiMgr.collBlk.addCloseListener(this.sCollBlkClose);
@@ -165,11 +174,12 @@ scImgMgr.registerGallery = function(pPathGal, pOpts) {
  * @param pPathZoom scPaLib path vers les zooms.
  * @param pOpts options du zoom.
  *           toolbar : 0 = pas de toolbar / 1 = toolbar
- *           type : img = zoom d'image / iframe = zoom chargé dans une iframe
+ *           type : img = zoom d'image / svg = zoom de svg / iframe = zoom chargé dans une iframe
  *           mag : 0 = pas de loupe /  1 = ajouter une loupe si besoin
  *           magScale : relative size of the zoom area compared to the visible image
  *           magMax : 0 = pas de mode max /  1 = mode max sur click
  *           magPan : 0 = pas de pan en mode max /  1 = pan en mode max
+ *           svgMax : 0 = svg affiché à sa taille standard / 1 = toujours maximiser les svg pour ateindre la taille du viewport
  *           titlePath : scPaLib path to a title relative to the anchor.
  *           clsPre : préfix de classe CSS
  */
@@ -183,6 +193,7 @@ scImgMgr.registerZoom = function(pPathZoom, pOpts) {
 	vZm.fOpts.magScale = (typeof vZm.fOpts.magScale == "undefined" ? 0.33 : vZm.fOpts.magScale);
 	vZm.fOpts.magMax = (typeof vZm.fOpts.magMax == "undefined" ? 1 : vZm.fOpts.magMax);
 	vZm.fOpts.magPan = (typeof vZm.fOpts.magPan == "undefined" ? 1 : vZm.fOpts.magPan);
+	vZm.fOpts.svgMax = (typeof vZm.fOpts.svgMax == "undefined" ? 0 : vZm.fOpts.svgMax);
 	vZm.fOpts.clsPre = (typeof vZm.fOpts.clsPre == "undefined" ? this.fTypZm : vZm.fOpts.clsPre);
 	vZm.fOpts.titlePath = (typeof vZm.fOpts.titlePath == "undefined" ? null : vZm.fOpts.titlePath);
 	if ((vZm.fOpts.mag > 0 || vZm.fOpts.titlePath) && vZm.fOpts.toolbar == 0) vZm.fOpts.toolbar = 1;
@@ -195,6 +206,15 @@ scImgMgr.registerAdaptedImage = function(pPathImage) {
 	var vImg = new Object;
 	vImg.fPath = pPathImage;
 	this.fPathImg[this.fPathImg.length] = vImg;
+}
+
+/** scImgMgr.registerSvg.
+ * @param pPathSvg scPaLib path vers les svgs.
+ */
+scImgMgr.registerSvg = function(pPathSvg) {
+	var vSvg = new Object;
+	vSvg.fPath = pPathSvg;
+	this.fPathSvg[this.fPathSvg.length] = vSvg;
 }
 
 /** register a listener. */
@@ -357,13 +377,27 @@ scImgMgr.xInitImgs = function(pCo) {
 	}
 }
 scImgMgr.xInitImg = function(pImg) {
-	if (pImg.width>this.fMaxDeviceWidth){
-		pImg.setAttribute("width", "");
-		pImg.setAttribute("height", "");
-		pImg.style.maxWidth = "100%";
-		pImg.style.height = "auto";
+	pImg.fWidth = pImg.width;
+	pImg.setAttribute("width", "");
+	pImg.setAttribute("height", "");
+	pImg.style.width = "100%";
+	pImg.style.maxWidth = pImg.fWidth+"px";
+	pImg.style.height = "auto";
+	pImg.fIsAdapted = true;
+	
+/*	if (pImg.width>this.fMaxDeviceWidth){
 		pImg.fIsAdapted = true;
+	}*/
+}
+/* === SVG manager ========================================================== */
+scImgMgr.xInitSvgs = function(pCo) {
+	for(var i=0; i<this.fPathSvg.length; i++) {
+		var vSvgs = scPaLib.findNodes(this.fPathSvg[i].fPath, pCo);
+		for(var j=0; j<vSvgs.length; j++) this.xInitSvg(vSvgs[j]);
 	}
+}
+scImgMgr.xInitSvg = function(pSvg) {
+	if (!pSvg.getAttribute("viewBox")) pSvg.setAttribute("viewBox", "0 0 " + pSvg.width.baseVal.value + " " + pSvg.height.baseVal.value);
 }
 /* === Animation manager ==================================================== */
 scImgMgr.xInitAnims = function(pCo) {
@@ -584,21 +618,24 @@ scImgMgr.xInitZms = function(pCo) {
 		for(var j=0; j<vZooms.length; j++) {
 			var vAnc = vZooms[j];
 			try {
-				var vSubImg = scPaLib.findNode("des:img", vAnc);
-				if (vSubImg && vSubImg.fIsAdapted) {
-					vAnc.onclick=function(){return true;}
-				} else {
-					vAnc.fZmUri = vAnc.href;
-					vAnc.fOpts = this.fPathZoom[i].fOpts;
-					vAnc.target = "_self";
-					vAnc.fName=this.fTypZm+"Zm";
-					vAnc.fObj=vAnc;
-					vAnc.setAttribute("role", "button");
-					vAnc.title = this.xGetStr(32);
-					vAnc.onclick=function(){return scImgMgr.xBtnMgr(this);}
-					vAnc.onkeydown=function(pEvent){scDynUiMgr.handleBtnKeyDwn(pEvent);}
-					vAnc.onkeyup=function(pEvent){scDynUiMgr.handleBtnKeyUp(pEvent);}
+				vAnc.fImg = scPaLib.findNode("des:img", vAnc);
+				vAnc.fZmUri = vAnc.href;
+				vAnc.fOpts = this.fPathZoom[i].fOpts;
+				vAnc.fName=this.fTypZm+"Zm";
+				vAnc.fObj=vAnc;
+				vAnc.setAttribute("role", "button");
+				vAnc.title = this.xGetStr(32);
+				vAnc.onclick=function(){
+					if (this.fImg && this.fImg.fIsAdapted && this.fImg.fWidth > window.innerWidth) {
+							this.target = "_blank";
+						return true;
+					} else {
+							this.target = "_self";
+						return scImgMgr.xBtnMgr(this);
+					}
 				}
+				vAnc.onkeydown=function(pEvent){scDynUiMgr.handleBtnKeyDwn(pEvent);}
+				vAnc.onkeyup=function(pEvent){scDynUiMgr.handleBtnKeyUp(pEvent);}
 			} catch(e){
 				scCoLib.log("scImgMgr.xInitZms::Error : "+e);
 			}
@@ -615,7 +652,7 @@ scImgMgr.xInitZm = function(pAnc) {
 	pAnc.fCvs.fAnc = pAnc;
 	pAnc.fCvs.setAttribute("role", "dialog");
 	pAnc.fCvs.onclick=function(){return scImgMgr.xClsZm(this.fAnc);}
-	pAnc.fFra = scDynUiMgr.addElement("div", pAnc.fCvs,vOpts.clsPre+"Fra", null, {visibility:"hidden"});
+	pAnc.fFra = scDynUiMgr.addElement("div", pAnc.fCvs,vOpts.clsPre+"Fra", null, {visibility:vOpts.type == "svg" ? "" : "hidden"});
 	pAnc.fFra.onclick=function(pEvt){
 		var vEvt = scImgMgr.xGetEvt(pEvt);
 		vEvt.cancelBubble = true;
@@ -632,6 +669,16 @@ scImgMgr.xInitZm = function(pAnc) {
 		vCo.fOvr.fAnc = pAnc;
 		vCo.fOvr.onclick=function(){return scImgMgr.xClsZm(this.fAnc);}
 		vCo.fOvr.style.cursor = "pointer";
+	} else if (vOpts.type == "svg"){
+		vImg = vCo.fImg = scPaLib.findNode("des:svg", pAnc).cloneNode(true);
+		vCo.appendChild(vImg);
+		vImg.fAnc = pAnc;
+		pAnc.fDefHeight = vImg.height.baseVal.value * (vOpts.svgMax==1 ? 1000 : 0);
+		pAnc.fDefWidth = vImg.width.baseVal.value * (vOpts.svgMax==1 ? 1000 : 0);
+		if (!vImg.getAttribute("viewBox")) vImg.setAttribute("viewBox", "0 0 " + vImg.width.baseVal.value + " " + vImg.height.baseVal.value);
+		pAnc.fRatio = pAnc.fDefWidth/pAnc.fDefHeight;
+		pAnc.fDeltaHeight = scImgMgr.xGetEltHeight(pAnc.fFra) - scImgMgr.xGetEltHeight(pAnc.fCo) + scCoLib.toInt(scImgMgr.xReadStyle(pAnc.fCvs,"paddingTop")) + scCoLib.toInt(scImgMgr.xReadStyle(pAnc.fCvs,"paddingBottom"));
+		pAnc.fDeltaWidth = scImgMgr.xGetEltWidth(pAnc.fFra) - scImgMgr.xGetEltWidth(pAnc.fCo) + scCoLib.toInt(scImgMgr.xReadStyle(pAnc.fCvs,"paddingLeft")) + scCoLib.toInt(scImgMgr.xReadStyle(pAnc.fCvs,"paddingRight"));
 	} else {
 		var vAddMag = vOpts.mag > 0;
 		if (!vAddMag){
@@ -690,7 +737,7 @@ scImgMgr.xOpenZm = function(pAnc) {
 	if(this.xReadStyle(pAnc.fCvs,"position") == "absolute") window.scroll(0,0); // if position:absolute, we must scroll the SS into view.
 	scImgMgr.fadeInTask.initTask(pAnc);
 	scTiLib.addTaskNow(scImgMgr.fadeInTask);
-	if(pAnc.fCo && !pAnc.fCo.fImg.src) pAnc.fCo.fImg.setAttribute("src", pAnc.fZmUri);
+	if(pAnc.fCo && !pAnc.fCo.fImg.src && pAnc.fOpts.type!="svg") pAnc.fCo.fImg.setAttribute("src", pAnc.fZmUri);
 	else scImgMgr.xRedrawZm(pAnc);
 	scImgMgr.fCurrItem = pAnc;
 	pAnc.fKeyUpOld = document.onkeyup;
@@ -832,8 +879,8 @@ scImgMgr.xRedrawZm = function(pAnc) {
 		var vNewWidth = 0;
 		if (pAnc.fRatio <= vCoRatio && vCoHeight < pAnc.fDefHeight) vNewHeight = vCoHeight;
 		if (pAnc.fRatio >= vCoRatio && vCoWidth < pAnc.fDefWidth) vNewWidth = vCoWidth;
-		vImg.style.width = (vNewWidth>0 ? scCoLib.toInt(vNewWidth)+"px" : "");
-		vImg.style.height = (vNewHeight>0 ? scCoLib.toInt(vNewHeight)+"px" : "");
+		vImg.style.width = (vNewWidth>0 ? scCoLib.toInt(vNewWidth)+"px" : "auto");
+		vImg.style.height = (vNewHeight>0 ? scCoLib.toInt(vNewHeight)+"px" : "auto");
 		var vImgHeight = pAnc.fCurrHeight = scCoLib.toInt(vNewHeight > 0 ? vNewHeight : vNewWidth > 0 ? vNewWidth/pAnc.fRatio : pAnc.fDefHeight);
 		var vImgWidth = pAnc.fCurrWidth = scCoLib.toInt(vNewWidth > 0 ? vNewWidth : vNewHeight > 0 ? vNewHeight*pAnc.fRatio : pAnc.fDefWidth);
 		vCo.style.width = vImgWidth+"px";
@@ -847,7 +894,7 @@ scImgMgr.xRedrawZm = function(pAnc) {
 			vMag.style.height = vMag.fHeight+"px";
 		}
 		vFra.style.marginTop = scCoLib.toInt((vCoHeight - vImgHeight) / 2) + "px";
-		vFra.style.marginLeft = scCoLib.toInt((vCoWidth - vImgWidth) / 2) + "px";
+		vFra.style[this.fMarginStart] = scCoLib.toInt((vCoWidth - vImgWidth) / 2) + "px";
 		pAnc.fOver.style.height = (scImgMgr.xPageHeight()>scImgMgr.xClientHeight() ? scImgMgr.xPageHeight()+"px" : "");
 		pAnc.fOver.style.width = scCoLib.toInt(scImgMgr.xPageWidth()>scImgMgr.xClientWidth() ? scImgMgr.xPageWidth() : scImgMgr.xClientWidth())+"px";
 		
@@ -901,7 +948,7 @@ scImgMgr.xInitSs = function(pAlbFra) {
 	pAlbFra.fCvs.setAttribute("role", "dialog");
 	pAlbFra.fCvs.style.width = (vOpts.maxWidth + 20) + "px";
 	pAlbFra.fCvs.style.height = (vOpts.maxHeight + 50) + "px";
-	pAlbFra.fCvs.style.marginLeft = (-(vOpts.maxWidth + 20)/2) + "px";
+	pAlbFra.fCvs.style[this.fMarginStart] = (-(vOpts.maxWidth + 20)/2) + "px";
 	pAlbFra.fCvs.style.marginTop = (-(vOpts.maxHeight + 50)/2) + "px";
 	pAlbFra.fFra = scDynUiMgr.addElement("div",pAlbFra.fCvs,vOpts.clsPre+"Fra");
 	pAlbFra.fSsCo = scDynUiMgr.addElement("ul",pAlbFra.fFra,vOpts.clsPre+"Co");
@@ -1260,8 +1307,8 @@ scImgMgr.xPageHeight = function() {
 /** scImgMgr.xPageWidth. */
 scImgMgr.xPageWidth = function() {
 	if(this.fPgeFra){
-		if(this.fPgeFra.offsetWidth) return this.fPgeFra.offsetWidth + this.xGetEltLeft(this.fPgeFra) + scCoLib.toInt(this.xReadStyle(this.fPgeFra, "marginRight"));
-		else if(this.fPgeFra.clientWidth) return this.fPgeFra.clientWidth + this.xGetEltLeft(this.fPgeFra) + scCoLib.toInt(this.xReadStyle(this.fPgeFra, "marginRight"));
+		if(this.fPgeFra.offsetWidth) return this.fPgeFra.offsetWidth + this.xGetEltLeft(this.fPgeFra) + scCoLib.toInt(this.xReadStyle(this.fPgeFra, this.fMarginEnd));
+		else if(this.fPgeFra.clientWidth) return this.fPgeFra.clientWidth + this.xGetEltLeft(this.fPgeFra) + scCoLib.toInt(this.xReadStyle(this.fPgeFra, this.fMarginEnd));
 	}	
 }
 /** scImgMgr.xClientHeight. */

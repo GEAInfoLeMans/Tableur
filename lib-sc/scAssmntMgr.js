@@ -51,40 +51,40 @@ var scAssmntMgr = {
 		return pButton!=null && pButton.className.indexOf("toggleButtonOn")>=0;
 	},
 	
-
-
-	/* Stylage par défaut des areas de imagemaps (gmcq) */
-	mapHighlightDefault : {
+	/* === fonctions utilitaires gmcq ========================================== */
+	/* Stylage par défaut des areas */
+	gmcqHighlightDefault : {
 		fillColor: '000000',
 		fillOpacity: 0.1,
 		strokeColor: 'CCCCCC',
 		strokeOpacity: 0.5
 	},
-	mapHighlightRight : {
+	gmcqHighlightRight : {
 		fillColor: '00FF00',
 		fillOpacity: 0.1,
 		strokeColor: '00FF00',
 		strokeOpacity: 1,
 		alwaysOn: true
 	},
-	mapHighlightWrong : {
+	gmcqHighlightWrong : {
 		fillColor: 'FF0000',
 		fillOpacity: 0.1,
 		strokeColor: 'FF0000',
 		strokeOpacity: 1,
 		alwaysOn: true
 	},
+
 	gmcqInitUi : function(pId){
 		try{
 			var vMgr = window[pId];
+			var vImg = scPaLib.findNodes("ide:"+pId+"_form/des:img")[0];
 			vMgr.fImg = scPaLib.findNodes("ide:"+pId+"_form/des:img")[1];
+			vMgr.fImg.width = vImg.width;
+			vMgr.fImg.height = vImg.height;
 			vMgr.fAreas = scPaLib.findNodes("ide:"+pId+"_form/des:area");
 			vMgr.fInputs = scPaLib.findNodes("ide:"+pId+"_form/des:input");
 			vMgr.fRows = scPaLib.findNodes("ide:"+pId+"_form/des:tr");
 			vMgr.fClass = scPaLib.findNode("ide:"+pId+"_form/des:table").className.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-			var xInitMarker = function(pElt,pDefaultImage){
-			
-			}
 			if (vMgr.fFreeMarker){
 				vMgr.fMarkerFrame = scPaLib.findNode("ide:"+pId+"_form/chi:div");
 				if (vMgr.fSingleResp){
@@ -94,7 +94,7 @@ var scAssmntMgr = {
 					this.xGmcqInitMarker(vSelectBox, vMgr);
 				}
 			} else {
-				vMgr.fSelectBoxes = scPaLib.findNodes("ide:"+pId+"_form/des:span");
+				vMgr.fSelectBoxes = scPaLib.findNodes("ide:"+pId+"_form/chi:div/des:span");
 				for(var i=0; i<vMgr.fSelectBoxes.length; i++){
 					var vSelectBox = vMgr.fSelectBoxes[i];
 					this.setMode(vSelectBox, "invisible");
@@ -112,7 +112,7 @@ var scAssmntMgr = {
 	
 	gmcqHighlight : function(pMgr){
 		try{
-			scMapMgr.maphighlight(pMgr.fImg, scMapMgr.extend(this.mapHighlightDefault, {alwaysOn:(pMgr.fHighlight == "always"),neverOn:(pMgr.fHighlight == "never")}));
+			scMapMgr.maphighlight(pMgr.fImg, scMapMgr.extend(this.gmcqHighlightDefault, {alwaysOn:(pMgr.fHighlight == "always"),neverOn:(pMgr.fHighlight == "never")}));
 		} catch(e) {scCoLib.log("ERROR - scAssmntMgr.gmcqHighlight :"+e);}
 	},
 	
@@ -166,7 +166,7 @@ var scAssmntMgr = {
 				var vArea = vMgr.fAreas[i];
 				var vRowClass = vMgr.fRows[i].className;
 				if (pShow){
-					vArea.maphighlight = (vRowClass.indexOf("assmntSolCheck")>=0 || vRowClass.indexOf("assmntSolRight")>=0 ? this.mapHighlightRight : this.mapHighlightWrong);
+					vArea.maphighlight = (vRowClass.indexOf("assmntSolCheck")>=0 || vRowClass.indexOf("assmntSolRight")>=0 ? this.gmcqHighlightRight : this.gmcqHighlightWrong);
 				} else vArea.maphighlight = null;
 			}
 			this.gmcqHighlight(vMgr);
@@ -185,6 +185,57 @@ var scAssmntMgr = {
 			pElt.style.marginLeft = "-20px";
 			pElt.style.backgroundImage = 'url("'+scServices.scLoad.resolveDestUri("/lib-sc/assmntDhtmlTransf/"+(pMgr.fFreeMarker?"mark":"select")+".gif")+'")';
 		}
+	},
+	
+	/* === fonctions utilitaires imgGap ========================================== */
+	/* Stylage par défaut des areas */
+	imgGapHighlightDefault : {
+		fillColor: '000000',
+		fillOpacity: 0.1,
+		strokeColor: 'CCCCCC',
+		strokeOpacity: 0.5
+	},
+	imgGapHighlightRight : {
+		fillColor: '00FF00',
+		fillOpacity: 0.1,
+		strokeColor: '00FF00',
+		strokeOpacity: 1,
+		alwaysOn: true
+	},
+	imgGapHighlightWrong : {
+		fillColor: 'FF0000',
+		fillOpacity: 0.1,
+		strokeColor: 'FF0000',
+		strokeOpacity: 1,
+		alwaysOn: true
+	},
+	imgGapInitUi : function(pId){
+		try{
+			var vMgr = window[pId];
+			vMgr.fImg = scPaLib.findNodes("ide:"+pId+"_form/des:img")[1];
+			vMgr.fAreas = scPaLib.findNodes("ide:"+pId+"_form/des:area");
+			vMgr.fInputs = scPaLib.findNodes("ide:"+pId+"_form/des:input");
+		} catch(e) {scCoLib.log("ERROR - scAssmntMgr.imgGapInitUi :"+e);}
+	},
+	
+	imgGapHighlight : function(pMgr){
+		try{
+			scMapMgr.maphighlight(pMgr.fImg, scMapMgr.extend(this.imgGapHighlightDefault, {alwaysOn:(pMgr.fHighlight == "always"),neverOn:(pMgr.fHighlight == "never")}));
+		} catch(e) {scCoLib.log("ERROR - scAssmntMgr.imgGapHighlight :"+e);}
+	},
+	
+	imgGapSetSolution : function(pId, pShow){
+		try{
+			var vMgr = window[pId];
+			for(var i=0; i<vMgr.fAreas.length; i++){
+				var vArea = vMgr.fAreas[i];
+				var vInput = vMgr.fInputs[i];
+				if (pShow){
+					vArea.maphighlight = (vMgr.getSolIdx(vInput.name)>-1 ? this.imgGapHighlightRight : this.imgGapHighlightWrong);
+				} else vArea.maphighlight = null;
+			}
+			this.imgGapHighlight(vMgr);
+		} catch(e) {scCoLib.log("ERROR - scAssmntMgr.imgGapSetSolution :"+e);}
 	}
 	
 }

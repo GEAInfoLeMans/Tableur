@@ -124,7 +124,8 @@ scCoLib.log = function(pMsg) {
 function ScLoad(pScLoadParams) {
 	if (pScLoadParams) {
 		this.fPathToRoot = pScLoadParams.pathToRoot;
-		this.fRootUrl = scCoLib.hrefBase().substring(0, scCoLib.hrefBase().length - pScLoadParams.destUri.length);
+		var vHrefBase = scCoLib.hrefBase();
+		this.fRootUrl = vHrefBase.substring(0, vHrefBase.length - (vHrefBase.lastIndexOf(pScLoadParams.destUri) == vHrefBase.length - pScLoadParams.destUri.length ?  pScLoadParams.destUri.length : 1));
 		this.fFrameId = pScLoadParams.frameId;
 		var vSkinLoc = pScLoadParams.skinLoc;
 		if (vSkinLoc && vSkinLoc != "/skin") {

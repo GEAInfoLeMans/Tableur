@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>Solution d'exercice</title>
+  <meta charset="UTF-8">
+  <meta name="generator" content="SCENARI 4.2.200 / OpaleExtScenario 3.7.001">
+  <meta name="revision" content="2019-10-07 07:46">
+  <link rel="start" href="Excel20192020.html" title="EXCEL">
+  <meta name="author" content="PA.Broux - T.Chaillou -  L.Courtemanche - N. Dugue - F.Jacoboni - A.Villaume  ">
+  <meta name="date" content>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scImgMgr/scImgMgr.css">
+  <link rel="stylesheet" type="text/css" href="../lib-md/w_scCodeMgr/scCodeMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {id:"k1g435qq"};
+/*1*/ window.scLoadParams = {destUri:"/co/et&ou5_1.html", pathToRoot:"../"};
+</script>
+  <script type="text/JavaScript" src="../lib-sc/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_assmnt.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scMapMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scDragMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sc/scAssmntMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/s_scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_mathjax/mathjaxMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scMediaMgr/scMediaMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-md/w_scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{if(window.opener && window.opener.scServices && window.opener.scServices.id == scServices.id) scServices = window.opener.scServices; else if(window.parent && window.parent.scServices && window.parent.scServices.id == scServices.id) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerAdaptedImage("ide:content/des:img");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerSvg("des:svg");
+scImgMgr.registerZoom("des:a.svgZoom",{type:"svg",svgMax:1,toolbar:1,titlePath:"par:/nsi:/des:span.capTi"});
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/des:span.capTi"});
+
+</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/main.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/skin.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+  <script type="text/javascript">try{
+	if(window.frameElement.setSubWindowTitle) window.frameElement.setSubWindowTitle(document.title);
+}catch(e){}
+</script>
+ </head>
+ <body class="subWin eval">
+  <div id="root"><header id="header" role="banner"><nav role="navigation"><ul id="accessibility"><li class="waiContent"><a href="#content"><span>contenu</span></a></li><li class="waiNav"><a href="#navigation"><span>navigation</span></a></li></ul></nav></header><main id="main" role="main"><div id="document"><div id="content" tabindex="-1"><div class="scroller"><hr class="hidden"><section class="hBk article result"><div class="hBk_co "><script type="text/JavaScript">
+var TSR7ErOlwEeL6YAv7et6xe_Asol = {
+
+	fId : "TSR7ErOlwEeL6YAv7et6xe",
+	fCurSeq : null,
+	initSeq : function(pCodeSeq){
+	try {
+		if(pCodeSeq==null) return;
+		if(this.fCurSeq!=null) this.closeSeq();
+		this.fCurSeq = pCodeSeq;
+		switch(this.fCurSeq) {
+case "init" : {
+
+	this.refreshResult = function(pDisplay){
+		if(pDisplay) this.fResultDisplay = pDisplay;
+		if(this.fResultDisplay == "none") for(var i=this.fLabels.length -1; i >=0; i--)  scDragMgr.helpers.delClass(this.fLabels[i],"ddLabel_Right","ddLabel_Wrong");
+		else for(var i=this.fLabels.length -1; i >=0; i--) {
+			var vLabel = this.fLabels[i];
+
+			var vOldClass = (vLabel.sG == vLabel.rG ) ? "ddLabel_Wrong" : "ddLabel_Right";
+			var vNewClass = (vLabel.sG == vLabel.rG ) ? "ddLabel_Right" : "ddLabel_Wrong";
+
+			scDragMgr.helpers.switchClass(vLabel, vOldClass, vNewClass);
+		}
+	};
+var vLoadRespSession = "eval";
+
+		for(var i = this.fLabels.length - 1; i >=0; i--) scDragMgr.setDraggable(this.fLabels[i], false);
+		this.load(vLoadRespSession);
+		this.synch();
+	this.fResultDisplay = "addClass";
+
+var vLoadScoreSession = "eval";
+		this.fMinPts = scServices.assmntMgr.getMinPts(this.fId, vLoadScoreSession);
+		this.fScorePts = scServices.assmntMgr.getScorePts(this.fId, vLoadScoreSession);
+		this.fMaxPts = scServices.assmntMgr.getMaxPts(this.fId, vLoadScoreSession);
+this.fRespSession = null;
+
+		this.computeScore = function() {
+
+		this.refreshScoresFeedbacks();
+		this.refreshResult();
+	}
+
+
+		this.computeScore();
+
+		scServices.assmntMgr.commit();
+		break;
+	}
+
+		}
+	}catch(e){alert("failed:::"+e)};
+	},
+
+	closeSeq: function(){
+		var vForm = document.forms.TSR7ErOlwEeL6YAv7et6xe_Asol_form;
+		switch(this.fCurSeq) {
+case "init" : {
+		this.refreshResult("none");
+
+		break;
+	}
+
+		}
+		this.fCurSeq = null;
+	},
+	getOnLoadSeq:function() {
+
+	return "init";
+	},
+
+	saveResp:function(pSession){
+		if(pSession==null) return;
+		var vLabel = this.fLabels[0];
+		var vStr = "[{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		for(var i=1, len=this.fLabels.length; i < len; i++) {
+			vLabel = this.fLabels[i];
+			vStr += ",{g:" + vLabel.rG + ",offs:" + vLabel.rO + "," + scDragMgr.saveLabelPos(vLabel) + "}";
+		}
+		vStr+="]";
+		scServices.assmntMgr.setResponse(this.fId, pSession, "pos", vStr);
+	},
+	load:function(pSession){
+		var vStr = (pSession!=null) ? scServices.assmntMgr.getResponse(this.fId, pSession, "pos") : null;
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			for(var j=vGroup.length-1; j >=0; j--) vGroup[j].labelsToAdd = [];
+		}
+		if(vStr) {
+						var vList = eval(vStr);
+			for(var i=0, len=this.fLabels.length; i < len; i++) {
+				var vLabelToAdd = vList[i];
+				vLabelToAdd.label = this.fLabels[i];
+				var vGroupC = this.fGroupsC[vLabelToAdd.g];
+				if(vGroupC.length == 1) vGroupC[0].labelsToAdd[vLabelToAdd.offs] = vLabelToAdd; 
+				else vGroupC[vLabelToAdd.offs].labelsToAdd.push(vLabelToAdd);
+			}
+		} else {
+						var vBasketC = this.fGroupsC[0];
+
+			for(var i=vBasketC.length-1; i >=0; i--) for(var j=0, vLen=vBasketC[i]._Labels.length; j < vLen; j++) vBasketC[i].labelsToAdd.push({label:vBasketC[i]._Labels[j]});
+
+		}
+		scDragMgr.repopulateContainers("TSR7ErOlwEeL6YAv7et6xe_Asol");
+	},
+	synch:function(){
+		for(var i=this.fGroupsC.length -1; i >=0; i--) {
+			var vGroup = this.fGroupsC[i];
+			var vOffset = 0;
+			for(var j=0, vLenJ=vGroup.length; j < vLenJ; j++) {
+				var vItems = scDragMgr.getLabels(vGroup[j]);
+				var vLenK = vItems.length;
+								if(vLenK == 0) vOffset++;
+				else for(var k=0; k < vLenK; k++) {
+					vItems[k].rG = i;
+					vItems[k].rO = vOffset++;
+				}
+			}
+		}
+	},
+	refreshScoresFeedbacks : function(){
+
+		var vScoreNode = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_SN44");
+
+		var vScore = (Math.round((this.fScorePts-this.fMinPts) / (this.fMaxPts-this.fMinPts) * 100) * 1)+ 0;
+if(vScore > 99 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Bonne réponse<\/span>";
+			vScoreNode.className = "answBest";
+		} else if(vScore > 49 && vScore <= 99 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answGood";
+		} else if(vScore > 0 && vScore <= 49 && true) {
+			vScoreNode.innerHTML = "<span>" + vScore + "% de bonnes réponses<\/span>";
+			vScoreNode.className = "answBad";
+		} else if(vScore <= 0 && true) {
+			vScoreNode.innerHTML = "<span>"  + "Mauvaise réponse <\/span>";
+			vScoreNode.className = "answWorst";
+		} else  {
+			vScoreNode.innerHTML = "";
+			vScoreNode.className = "";
+		}
+
+	},
+	onLoad: function(){
+	try{
+		var onChange = function() {
+TSR7ErOlwEeL6YAv7et6xe_Asol.synch();
+TSR7ErOlwEeL6YAv7et6xe_Asol.computeScore();
+TSR7ErOlwEeL6YAv7et6xe_Asol.saveResp(TSR7ErOlwEeL6YAv7et6xe_Asol.fRespSession);
+			scServices.assmntMgr.commit();
+		}
+		this.fLabels = [];
+		var vLabel, vC;
+scDragMgr.makeContainer("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_S_N6f"), vC = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_S_N71"), sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_S_N7c")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddBasketDragOver');
+vLabel = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_LN29");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("TSR7ErOlwEeL6YAv7et6xe_Asol", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_LN38");
+	this.fLabels.push(vLabel);
+	vLabel.sO=1;
+vLabel.sG=1;
+scDragMgr.makeDraggableLabel("TSR7ErOlwEeL6YAv7et6xe_Asol", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_LN59");
+	this.fLabels.push(vLabel);
+	vLabel.sO=0;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("TSR7ErOlwEeL6YAv7et6xe_Asol", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_LN68");
+	this.fLabels.push(vLabel);
+	vLabel.sO=1;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("TSR7ErOlwEeL6YAv7et6xe_Asol", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+vLabel = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_LN77");
+	this.fLabels.push(vLabel);
+	vLabel.sO=2;
+vLabel.sG=2;
+scDragMgr.makeDraggableLabel("TSR7ErOlwEeL6YAv7et6xe_Asol", vLabel).setCallback(vLabel, onChange).setDragClass(vLabel, '');
+scDragMgr.makeContainer("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN8d_N18"), vC = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN94_N18"), sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN96_N18")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+scDragMgr.makeContainer("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN8d_N48"), vC = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN94_N48"), sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_NN96_N48")).setMode(vC, 'append', -1).setDragOverClass(vC, 'ddCatchDragOver');
+this.fGroupsC = [scDragMgr.getContainers("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_L")),scDragMgr.getContainers("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_RN18")),scDragMgr.getContainers("TSR7ErOlwEeL6YAv7et6xe_Asol", sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_RN48"))];
+		for(var i = this.fGroupsC[0].length-1; i >=0; i--) this.fGroupsC[0][i]._Labels = scDragMgr.getLabels(this.fGroupsC[0][i]);
+		this.initSeq(this.getOnLoadSeq()); 
+		var vNodeRoot = sc$("TSR7ErOlwEeL6YAv7et6xe_Asol_A");
+		vNodeRoot.style.display = "block"; 
+	}catch(e){console.log(e);}
+	},
+	onUnload: function(){
+		this.closeSeq();
+	},
+	loadSortKey: "A",
+	unloadSortKey: "A"
+};
+
+scOnLoads[scOnLoads.length] = TSR7ErOlwEeL6YAv7et6xe_Asol;
+scOnUnloads[scOnUnloads.length] = TSR7ErOlwEeL6YAv7et6xe_Asol;
+</script><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_A" style="display:none;"><div class="solBody"><div class="question"><h3 class="question_ti"><span>&Eacute;nonc&eacute;</span></h3><div class="rBk "><p>On veut savoir si l'&acirc;ge d'une personne est compris entre 12 et 18 ans compris. Quelle(s) formule(s) peut-on utiliser ?</p></div></div><div class="score"><h3 class="score_ti"><span>R&eacute;sultat</span></h3><div class="scoreEval " aria-live="polite"><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_SN44"><span></span></div></div></div><div class="sol"><h3 class="sol_ti"><span>Correction</span></h3><table class="mtTable"><tr><td class="mtTdBasketSol"></td><td class="mtTdHeading">Votre r&eacute;ponse</td><td class="mtTdHeading">Solution</td></tr><tr><td class="mtTdBasketSol"><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_L" class="ddBasket "><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_S_N6f" class="ddBasketCatch "><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_S_N71" class="ddBasketCont "><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_LN59" class="mtLabel "><p>=ET(AGE=&lt;18&nbsp;;AGE=&gt;12)</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_LN38" class="mtLabel "><p>=ET(AGE&gt;=12&nbsp;;AGE&lt;=18)</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_LN29" class="mtLabel "><p>=ET(AGE&lt;=18&nbsp;;AGE&gt;=12)</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_LN77" class="mtLabel "><p>=ET(AGE&lt;=12&nbsp;;AGE&gt;=18)</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_LN68" class="mtLabel "><p>=ET(AGE&lt;=18,AGE&gt;=12)</p></div></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_S_N7c" class="ddBasketIfEmpty "><span>Plus d'&eacute;l&eacute;ments &agrave; cat&eacute;goriser</span></div><div class="ddBasketEnd"></div></div></div></td><td class="mtTdSol"><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_RN18" class="ddRepArea "><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN8d_N18" class="ddDropCatch "><div class="ddDropTi"><p>1</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN94_N18" class="ddDropCont "></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN96_N18" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_RN48" class="ddRepArea "><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN8d_N48" class="ddDropCatch "><div class="ddDropTi"><p>=ET(AGE&gt;=12ans&nbsp;;AGE&lt;=18ans)</p></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN94_N48" class="ddDropCont "></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NN96_N48" class="ddDropContIfEmpty "><span>D&eacute;posez ici</span></div><div class="ddCatchDragEnd"></div></div></div></td><td class="mtTdSol"><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NNa6_N18" class="ddRepArea "><div class="ddDropCatch"><div class="ddDropTi"><p>1</p></div><div class="ddDropCont"><div class="mtLabelSol"><p>=ET(AGE&lt;=18&nbsp;;AGE&gt;=12)</p></div><div class="mtLabelSol"><p>=ET(AGE&gt;=12&nbsp;;AGE&lt;=18)</p></div></div><div class="ddCatchDragEnd"></div></div></div><div id="TSR7ErOlwEeL6YAv7et6xe_Asol_NNa6_N48" class="ddRepArea "><div class="ddDropCatch"><div class="ddDropTi"><p>=ET(AGE&gt;=12ans&nbsp;;AGE&lt;=18ans)</p></div><div class="ddDropCont"><div class="mtLabelSol"><p>=ET(AGE=&lt;18&nbsp;;AGE=&gt;12)</p></div><div class="mtLabelSol"><p>=ET(AGE&lt;=18,AGE&gt;=12)</p></div><div class="mtLabelSol"><p>=ET(AGE&lt;=12&nbsp;;AGE&gt;=18)</p></div></div><div class="ddCatchDragEnd"></div></div></div></td></tr></table></div></div></div></div></section></div></div><div id="navigation" tabindex="-1"><hr class="hidden"><span class="evalCounter"><span class="seen">5</span><span class="over">/</span><span class="total">5</span></span><nav class="pageTurner" role="navigation"><ul><li><a rel="prev" href="et%26ou4_1.html" target="_self" class="btnNav prevEval" title="Pr&eacute;c&eacute;dent (Solution d'exercice)"><span>Pr&eacute;c&eacute;dent</span></a></li><li><a rel="next" href="ET_OU_4.html" target="_self" class="btnNav nextEval" title="Suivant (Fin du test)"><span>Suivant</span></a></li></ul></nav></div></div></main></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scMediaMgr.init("ide:content/chi:div/chi:section/des:.mediaPlayer",{processYoutubeUrls :true});scImgMgr.init();</script>
+ </body>
+</html>

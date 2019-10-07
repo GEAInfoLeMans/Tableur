@@ -10,6 +10,7 @@ var scTooltipMgr = {
 	cTtShadow : false, // Add shadow?
 	cTtStatic : false, // tooltip NOT move with the mouse?
 	cTtSticky : false, // do NOT hide tooltip on mouseout?
+	cTtFocus : false, // do NOT focus tooltip on show?
 	cTtTemp : 0, // time span after which the tooltip disappears, 0 (zero) means "infinite timespan"
 	cTtMaxWidth : 400, // Max width of tooltips
 	cTtMaxHeight : 250, // Max height of tooltips (a scrollbar is added)
@@ -29,6 +30,7 @@ var scTooltipMgr = {
 	fXlim : 0, fYlim : 0, // right and bottom borders of visible client area
 	fSup : false, // true if Opt.ABOVE
 	fSticky : false, // fCurrTt sticky?
+	fFocus : false, // fCurrTt focus?
 	fWait : false,
 	fAct : false, // tooltip visibility flag
 	fSub : false, // true while tooltip below mousepointer
@@ -46,6 +48,7 @@ var scTooltipMgr = {
 	fFixType : "win",
 	fTtHPos : null,
 	fTtVPos : null,
+	fMakeListeners : new Array(),
 	fShowListeners : new Array(),
 	fHideListeners : new Array(),
 	fHideBasket : true,
@@ -91,12 +94,12 @@ var scTooltipMgr = {
 		pNode.ttId = this.xGenId("scTooltip"); //generate a new tooltip ID
 		pNode.setAttribute("aria-describedby", pNode.ttId);
 		pNode.fTtShownCls = this.xBuildCls(pCls,"act").split(' '); 
-		var vMaxX = this.xInt((this.fDb && this.fDb.clientWidth)? this.fDb.clientWidth : window.innerWidth)+this.xInt(window.pageXOffset || (this.fDb? this.fDb.scrollLeft : 0) || 0);
-		var vHtml = '<div id="'+pNode.ttId+'" role="dialog"'+(pTi? ' aria-labelledby="'+pNode.ttId+'ti"' : '')+' class="'+this.xBuildCls(pCls,"fra")+(pClsRoot!=''?' '+pClsRoot:'')+'"'+(pNode.fOpt.FIXTYPE!='free' ? ' style="position:absolute;z-index:1010;left:0px;top:0px;width:'+vMaxX+'px;visibility:hidden;text-align:left;"' : '')+'>';
+		var vHtml = '<div id="'+pNode.ttId+'" role="dialog"'+(pTi? ' aria-labelledby="'+pNode.ttId+'ti"' : '')+(pNode.fOpt.FOCUS? ' tabindex="-1"' : '')+' class="'+this.xBuildCls(pCls,"fra")+(pClsRoot!=''?' '+pClsRoot:'')+'"'+(pNode.fOpt.FIXTYPE!='free' ? ' style="position:absolute;z-index:1010;left:0px;top:0px;visibility:hidden;text-align:left;"' : '')+'>';
 		vHtml += '<div style="position:absolute;" class="'+this.xBuildCls(pCls,"")+'">';
 		if(pTi) vHtml += '<div id="'+pNode.ttId+'ti" class="'+this.xBuildCls(pCls,"ti")+'"><span>'+vTi+'</span></div>';
 		vHtml += '<div id="'+pNode.ttId+'Scrol" class="'+this.xBuildCls(pCls,"srl")+'"><div id="'+pNode.ttId+'co" class="'+this.xBuildCls(pCls,"co")+'">'+vCo+'</div></div>';
 		if (pNode.fOpt.CLSBTN) vHtml += '<a href="#" onclick="return scTooltipMgr.hideTooltip(true);" class="'+this.xBuildCls(pCls,"x")+'" title="'+pNode.fOpt.CLSBTNTI+'"><span>'+pNode.fOpt.CLSBTNCAP+'</span></a>';
+		if (pNode.fOpt.FOCUS) vHtml += '<a href="#" onclick="return false;" onfocus="scTooltipMgr.fCurrTt.focus();" style="position:absolute;" aria-hidden="true"></a>';
 		vHtml += '</div></div>'
 		var vTmpDiv=(pNode.fOpt.PARENT.ownerDocument?pNode.fOpt.PARENT.ownerDocument:pNode.fOpt.PARENT).createElement("DIV"); // Temp div to hold the created tooltip html
 		vTmpDiv.innerHTML = vHtml;
@@ -126,6 +129,8 @@ var scTooltipMgr = {
 		if (pNode.fOpt.FORCESTICKY) pNode.ttFSticky = true;
 		pNode.fOpt.STICKY = pNode.fOpt.STICKY || (pNode.ttFSticky || false);
 		if(!pNode.fOpt.STICKY) pNode.onmouseout = this.hideTooltip;
+
+		for(var i=0; i<this.fMakeListeners.length; i++) try{this.fMakeListeners[i](pNode);}catch(e){};
 		return(pNode.ttId);
 	},
 	xShow: function(pEvt, pId, pOpt) {
@@ -136,6 +141,7 @@ var scTooltipMgr = {
 		this.fCurrTt = this.xGetElt(pId);
 		this.fCurrTtId = pId;
 		if(this.fCurrTt) {
+			this.xSetTtSize(pId, this.fCurrTt.fNode.fOpt);
 			pEvt = pEvt || window.event;
 			if(this.fCurrTt.fNode.alt) {
 				this.fCurrTt.fNode.ttAlt = this.fCurrTt.fNode.alt;
@@ -143,11 +149,12 @@ var scTooltipMgr = {
 			}
 			if(this.fCurrTt.fNode.title) {
 				this.fCurrTt.fNode.ttTitle  = this.fCurrTt.fNode.title;
-				this.fCurrTt.fNode.title = "";
+				this.fCurrTt.fNode.removeAttribute("title");
 			}
 			for(var i=0; i<this.fCurrTt.fNode.fTtShownCls.length; i++) this.xAddClass(this.fCurrTt.fNode, this.fCurrTt.fNode.fTtShownCls[i])
 			this.fSub = !(this.fSup = pOpt.ABOVE);
 			this.fSticky = pOpt.STICKY;
+			this.fFocus = pOpt.FOCUS;
 			this.fCurrTtW = this.xGetEltW(this.fCurrTt);
 			this.fCurrTtH = this.xGetEltH(this.fCurrTt);
 			this.fOffX = pOpt.LEFT ? -(this.fCurrTtW+pOpt.OFFSETX) : pOpt.OFFSETX;
@@ -168,6 +175,7 @@ var scTooltipMgr = {
 			var vTimeOutTxt = 'scTooltipMgr.showDiv(\'true\');';
 			if(pOpt.STICKY) vTimeOutTxt += '{scTooltipMgr.releaseMov();scTooltipMgr.releaseSize();scTooltipMgr.fMupEvt = document.onmouseup || null;if(document.captureEvents && !scTooltipMgr.fNavn6) document.captureEvents(Event.MOUSEUP);document.onmouseup = scTooltipMgr.hideTooltip;}';
 			else if(pOpt.STATIC) vTimeOutTxt += 'scTooltipMgr.releaseMov();scTooltipMgr.releaseSize();';
+			if(pOpt.FOCUS) vTimeOutTxt += 'scTooltipMgr.fCurrTt.focus();';
 			if(pOpt.TEMP > 0) vTimeOutTxt += 'window.tt_rtm = window.setTimeout(\'scTooltipMgr.fSticky = false; scTooltipMgr.hideTooltip();\','+pOpt.TEMP+');';
 			window.tt_rdl = window.setTimeout(vTimeOutTxt, pOpt.DELAY);
 			if(!pOpt.FIX && (!pOpt.STICKY || (pOpt.STICKY && this.fCurrTt.fNode.onmouseover))) {
@@ -226,7 +234,7 @@ var scTooltipMgr = {
 			vX = this.xInt(pElt.style.pixelLeft);
 		} else {
 			vX = this.xInt(pElt.offsetLeft);
-			if (pElt.offsetParent.tagName.toLowerCase() != 'body' && pElt.offsetParent.tagName.toLowerCase() != 'html') {
+			if (pElt.offsetParent && pElt.offsetParent.tagName.toLowerCase() != 'body' && pElt.offsetParent.tagName.toLowerCase() != 'html') {
 				vX -= pElt.offsetParent.scrollLeft;
 				vX += this.xGetEltL(pElt.offsetParent);
 			}
@@ -239,7 +247,7 @@ var scTooltipMgr = {
 			vY = this.xInt(pElt.style.pixelTop);
 		} else {
 			vY = this.xInt(pElt.offsetTop);
-			if (pElt.offsetParent.tagName.toLowerCase() != 'body' && pElt.offsetParent.tagName.toLowerCase() != 'html') {
+			if (pElt.offsetParent && pElt.offsetParent.tagName.toLowerCase() != 'body' && pElt.offsetParent.tagName.toLowerCase() != 'html') {
 				vY -= pElt.offsetParent.scrollTop;
 				vY += this.xGetEltT(pElt.offsetParent);
 			}
@@ -413,10 +421,16 @@ var scTooltipMgr = {
 		if (pOpt.FIXTYPE == 'free') return;
 		var vCont = this.xGetElt(pId);
 		if (vCont) {
-			var vMaxW = pOpt.MAXWIDTH;
-			var vMaxH = pOpt.MAXHEIGHT;
+			var vMaxX = this.xInt((this.fDb && this.fDb.clientWidth)? this.fDb.clientWidth : window.innerWidth)+this.xInt(window.pageXOffset || (this.fDb? this.fDb.scrollLeft : 0) || 0);
 			var vTt = vCont.firstChild;
 			while(vTt && vTt.nodeType != 1) vTt = vTt.nextSibling;
+			vTt.style.width = '';
+			vCont.style.width = vMaxX ? vMaxX + 'px' : '';
+			vCont.style.height = '';
+			vCont.style.top = '';
+			vCont.style.left = '';
+			var vMaxW = pOpt.MAXWIDTH;
+			var vMaxH = pOpt.MAXHEIGHT;
 			var vTtScrol = this.xGetElt(pId+'Scrol');
 			var vTtW = this.xGetEltW(vTt);
 			if (vTtW > vMaxW) { //Fix max width if needed
@@ -497,11 +511,12 @@ var scTooltipMgr = {
 		vOpt.OFFSETY = (typeof vOpt.OFFSETY != "undefined")? vOpt.OFFSETY : this.cTtOffsetY,
 		vOpt.STATIC = (typeof vOpt.STATIC != "undefined")? vOpt.STATIC : this.cTtStatic,
 		vOpt.STICKY = (typeof vOpt.STICKY != "undefined")? vOpt.STICKY : this.cTtSticky,
+		vOpt.FOCUS = (typeof vOpt.FOCUS != "undefined")? vOpt.FOCUS : this.cTtFocus,
 		vOpt.TEMP = (typeof vOpt.TEMP != "undefined")? vOpt.TEMP : this.cTtTemp;
 		vOpt.CLSBTN = (typeof vOpt.CLSBTN != "undefined")? vOpt.CLSBTN : false;
 		vOpt.PARENT = (typeof vOpt.PARENT != "undefined")? vOpt.PARENT : document.body;
 		if (vOpt.CLSBTN) {
-			vOpt.CLSBTNCAP = (typeof vOpt.CLSBTNCAP != "undefined")? vOpt.CLSBTNCAP : "&nbsp;";
+			vOpt.CLSBTNCAP = (typeof vOpt.CLSBTNCAP != "undefined")? vOpt.CLSBTNCAP : "&#160;";
 			vOpt.CLSBTNTI = (typeof vOpt.CLSBTNTI != "undefined")? vOpt.CLSBTNTI : "";
 		}
 		return vOpt;
@@ -567,7 +582,7 @@ var scTooltipMgr = {
 				if(window.tt_rtm) window.clearTimeout(tt_rtm);
 				scTooltipMgr.showDiv(false);
 				scTooltipMgr.xSetDivPos(-2*scTooltipMgr.fCurrTtW, -2*scTooltipMgr.fCurrTtH);
-				if (scTooltipMgr.fCurrTt.fNode.ttTitle) scTooltipMgr.fCurrTt.fNode.title = scTooltipMgr.fCurrTt.fNode.ttTitle;
+				if (scTooltipMgr.fCurrTt.fNode.ttTitle) scTooltipMgr.fCurrTt.fNode.setAttribute("title", scTooltipMgr.fCurrTt.fNode.ttTitle);
 				if (scTooltipMgr.fCurrTt.fNode.ttAlt) scTooltipMgr.fCurrTt.fNode.alt = scTooltipMgr.fCurrTt.fNode.ttAlt;
 				for(var i=0; i<scTooltipMgr.fCurrTt.fNode.fTtShownCls.length; i++) scTooltipMgr.xDelClass(scTooltipMgr.fCurrTt.fNode, scTooltipMgr.fCurrTt.fNode.fTtShownCls[i]);
 				for(var i=0; i<scTooltipMgr.fHideListeners.length; i++) try{scTooltipMgr.fHideListeners[i](scTooltipMgr.fCurrTt.fNode);}catch(e){};
@@ -617,13 +632,15 @@ var scTooltipMgr = {
 			if (this.xHasAttr(vBskt, "data-titled-basket")) vBskt = vBskt.parentNode;
 			var vEmpty = true;
 			for(var i = 0; i < vBsktElts.length; i++) if (vBsktElts[i].nodeType==1 && !vBsktElts[i].ttIds) {vEmpty = false; break;} 
-			if (this.fHideBasket && vEmpty) vBskt.style.display = "none";
-			else vBskt.className = vBskt.className + " " + this.fRegCls;
-			
+			if (vEmpty){
+				if (this.fHideBasket) vBskt.style.display = "none";
+				else vBskt.className = vBskt.className + " " + this.fRegCls;
+			}
 		} catch(e){
 			scCoLib.log("scTooltipMgr.registerTooltip - error : "+e);
 		}
 	},
+	addMakeListener: function(pFunc) {this.fMakeListeners.push(pFunc)},
 	addShowListener: function(pFunc) {this.fShowListeners.push(pFunc)},
 	addHideListener: function(pFunc) {this.fHideListeners.push(pFunc)},
 	showTooltip: function(pNode, pEvt, pCo, pTi, pCls, pClsRoot, pOpt) {

@@ -1,9 +1,9 @@
 /**
  * LICENCE[[
- * Version: MPL 1.1/GPL 2.0/LGPL 2.1/CeCILL 2.O
+ * Version: MPL 2.0/GPL 3.0/LGPL 3.0/CeCILL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with
+ * 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
  *
  * Software distributed under the License is distributed on an "AS IS" basis,
@@ -16,15 +16,15 @@
  * The Initial Developer of the Original Code is 
  * samuel.monsarrat@kelis.fr
  *
- * Portions created by the Initial Developer are Copyright (C) 2012-2014
+ * Portions created by the Initial Developer are Copyright (C) 2012-2017
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either of the GNU General Public License Version 2 or later (the "GPL"),
- * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
- * or the CeCILL Licence Version 2.0 (http://www.cecill.info/licences.en.html),
+ * either of the GNU General Public License Version 3.0 or later (the "GPL"),
+ * or the GNU Lesser General Public License Version 3.0 or later (the "LGPL"),
+ * or the CeCILL Licence Version 2.1 (http://www.cecill.info/licences.en.html),
  * in which case the provisions of the GPL, the LGPL or the CeCILL are applicable
  * instead of those above. If you wish to allow use of your version of this file
  * only under the terms of either the GPL, the LGPL or the CeCILL, and not to allow
@@ -50,14 +50,14 @@ var searchMgr = {
 	fNoIdxFilter : scPaLib.compileFilter(".noIndex|.hidden|.footnotes|.CodeMirror-linenumber|script|noscript|object"),
 
 	fStrings : ["Annuler","Annuler la recherche",
-  /*02*/    "Rechercher dans le contenu","Aucun résultat.",
+  /*02*/    "Lancer la recherche","Aucun résultat.",
   /*04*/    "1 page trouvée","%s pages trouvées",
   /*06*/    "Précisez votre recherche...","Termes recherchés :",
   /*08*/    "Précédent","Occurrence précédente",
   /*10*/    "Suivant","Occurrence suivante",
   /*12*/    "Page précédente","Page suivante",
   /*14*/    "Liste","Afficher/cacher la liste des pages trouvées",
-  /*16*/    "pertinence : %s/9","Saisir la recherche",
+  /*16*/    "pertinence : %s/9","",
   /*18*/    "","%s",
   /*20*/    "Pas de résultat de recherche","Rechercher",
   /*22*/    "Ouvrir le menu","Fermer le menu"],
@@ -113,7 +113,6 @@ var searchMgr = {
 			this.fSearchInput.setAttribute("type", "search");
 			this.fSearchInput.setAttribute("role","search");
 			this.fSearchInput.id = this.fSearchInput.name = this.fSearchInput.placeholder = this.fStrings[21];
-			this.fSearchInput.title = this.fStrings[17];
 			this.fSearchInput.onkeyup = this.sKeyUp;
 			this.fSearchLaunch = scDynUiMgr.addElement("input",vSearchForm,"schBtnLaunch");
 			this.fSearchLaunch.setAttribute("type", "submit");
@@ -608,7 +607,7 @@ searchMgr.ListResultManager.prototype = {
 				// Création du premier lien
 				vPageRes.fLbl = scDynUiMgr.addElement("li",vRoot,"schPgeBk mnu_sel_no schPgeRank_"+vResult.cat);
 				var vRankText = searchMgr.fStrings[16].replace("%s",vResult.cat);
-				var vPgeBtn = searchMgr.xAddBtn(vPageRes.fLbl,"schPgeBtn schPgeSource_"+vPageRes.source,vPageRes.title,vRankText);
+				var vPgeBtn = searchMgr.xAddBtn(vPageRes.fLbl,"schPgeBtn schPgeSource_"+vPageRes.source,vPageRes.title);
 				vPgeBtn.href = scServices.scLoad.getRootUrl() + "/" + vPageUrl;
 				scDynUiMgr.addElement("span",vPgeBtn,"schPgeRank").innerHTML = "<span>" + vRankText + "</span>";
 				// Affiche un fil d'ariane si doublons (si la variable urls existe)
@@ -741,7 +740,7 @@ searchMgr.TreeResultManager.prototype = {
 		if (!vLbl.fClass) vLbl.fClass = vLbl.className;
 		if (!vLnk.fContent) vLnk.fContent = vLnk.innerHTML;
 		vLbl.className = vLbl.fClass + " schPgeBk schPgeRank_"+vCat;
-		vLnk.title = vCatText;
+		//vLnk.title = vCatText;
 		vLnk.innerHTML = vLnk.fContent+'<span class="schPgeRank"><span>'+vCatText+'</span></span>';
 	},
 
@@ -783,10 +782,9 @@ searchMgr.TreeResultManager.prototype = {
 /** searchMgr.MenuManager - Menu manager class. */
 searchMgr.MenuManager = function (pRoot, pOutline, pOpt) {
 	try{
-		this.fOpt = {target:"_self",addScroller:false,addTitleAttributes:false,contextRoot:null,neverFilter:false,buildItemCallback:function(pItem){}};
+		this.fOpt = {target:"_self",addTitleAttributes:false,contextRoot:null,neverFilter:false,buildItemCallback:function(pItem){}};
 		if (typeof pOpt != "undefined"){
 			if (typeof pOpt.target != "undefined") this.fOpt.target = pOpt.target;
-			if (typeof pOpt.addScroller != "undefined") this.fOpt.addScroller = pOpt.addScroller;
 			if (typeof pOpt.addTitleAttributes != "undefined") this.fOpt.addTitleAttributes = pOpt.addTitleAttributes;
 			if (typeof pOpt.contextRoot != "undefined") this.fOpt.contextRoot = pOpt.contextRoot;
 			if (typeof pOpt.neverFilter != "undefined") this.fOpt.neverFilter = pOpt.neverFilter;
@@ -840,71 +838,11 @@ searchMgr.MenuManager = function (pRoot, pOutline, pOpt) {
 		this.fFirstItem = vFirstItem;
 		this.fFirstFilteredItem = null;
 
-		if (this.fOpt.addScroller) this.buildMenuScroller();
 		if (this.fOpt.contextRoot) this.fContext = scDynUiMgr.addElement("span",this.fOpt.contextRoot,"ctx_root");
 
 	} catch(e){scCoLib.log("searchMgr.MenuManager init : "+e);}
 }
 searchMgr.MenuManager.prototype = {
-	/** MenuManager.buildMenuScroller - build a menu scroller infrastructre. */
-	buildMenuScroller : function() {
-		// Init Scroll
-		this.fRoot.fMgr = this;
-		this.fScrollerEnabled = true;
-		this.fRoot.style.overflow = searchMgr.fOverflowMethod;
-		var vFra = this.fRoot.parentNode;
-
-		// Init Scroll up button
-		this.fSrlUp = scDynUiMgr.addElement("div", vFra, "mnuSrlUpFra", this.fRoot);
-		this.fSrlUp.fMgr = this;
-		this.fSrlUp.onclick = function(){
-			this.fMgr.fSpeed -= 2;
-		}
-		this.fSrlUp.onmouseover = function(){
-			if(this.fMgr.fSpeed >= 0) {
-				this.fMgr.fSpeed = -2; 
-				scTiLib.addTaskNow(this.fMgr);
-			}
-		}
-		this.fSrlUp.onmouseout = function(){
-			this.fMgr.fSpeed = 0;
-		}
-		this.fSrlUpBtn = searchMgr.xAddBtn(this.fSrlUp, "mnuSrlUpBtn", searchMgr.fStrings[0], searchMgr.fStrings[1]);
-		this.fSrlUpBtn.fMgr = this;
-		this.fSrlUpBtn.onclick = function(){
-			this.fMgr.setScrollStep(-20); 
-			return false;
-		}
-		// Init Scroll down button
-		this.fSrlDwn = scDynUiMgr.addElement("div", vFra, "mnuSrlDwnFra");
-		this.fSrlDwn.fMgr = this;
-		this.fSrlDwn.onclick = function(){
-			this.fMgr.fSpeed += 2;
-		}
-		this.fSrlDwn.onmouseover = function(){
-			if(this.fMgr.fSpeed <= 0) {
-				this.fMgr.fSpeed = 2; 
-				scTiLib.addTaskNow(this.fMgr);
-			}
-		}
-		this.fSrlDwn.onmouseout = function(){
-			this.fMgr.fSpeed = 0;
-		}
-		this.fSrlDwnBtn = searchMgr.xAddBtn(this.fSrlDwn, "mnuSrlDwnBtn", searchMgr.fStrings[2], searchMgr.fStrings[3]);
-		this.fSrlDwnBtn.fMgr = this;
-		this.fSrlDwnBtn.onclick = function(){
-			this.fMgr.setScrollStep(20);
-			return false;
-		}
-		// Init scroll manager
-		this.checkScrollBtns();
-		this.ensureVisible();
-		scSiLib.addRule(this.fRoot, this);
-		this.fRoot.onscroll = function(){this.fMgr.checkScrollBtns()};
-		this.fRoot.onmousewheel = function(){this.fMgr.setScrollStep(Math.round(-event.wheelDelta/(scCoLib.isIE ? 60 : 40)))}; //IE, Safari, Chrome, Opera.
-		if(this.fRoot.addEventListener) this.fRoot.addEventListener('DOMMouseScroll', function(pEvent){this.fMgr.setScrollStep(pEvent.detail)}, false);
-
-	},
 	/** MenuManager.buildSubMenu - build the sub menu of a given root dom node. */
 	buildSubMenu : function (pRoot, pHidden) {
 		var i,vChi,vUl,vBtn,vTyp;

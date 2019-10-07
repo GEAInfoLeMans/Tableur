@@ -1,9 +1,9 @@
 /**
  * LICENCE[[
- * Version: MPL 1.1/GPL 2.0/LGPL 2.1/CeCILL 2.O
+ * Version: MPL 2.0/GPL 3.0/LGPL 3.0/CeCILL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with the
+ * 2.0 (the "License"); you may not use this file except in compliance with the
  * License. You may obtain a copy of the License at http://www.mozilla.org/MPL/
  *
  * Software distributed under the License is distributed on an "AS IS" basis,
@@ -16,15 +16,15 @@
  * The Initial Developer of the Original Code is 
  * samuel.monsarrat@kelis.fr
  *
- * Portions created by the Initial Developer are Copyright (C) 2010-2016
+ * Portions created by the Initial Developer are Copyright (C) 2010-2017
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either of the GNU General Public License Version 2 or later (the "GPL"),
- * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
- * or the CeCILL Licence Version 2.0 (http://www.cecill.info/licences.en.html),
+ * either of the GNU General Public License Version 3.0 or later (the "GPL"),
+ * or the GNU Lesser General Public License Version 3.0 or later (the "LGPL"),
+ * or the CeCILL Licence Version 2.1 (http://www.cecill.info/licences.en.html),
  * in which case the provisions of the GPL, the LGPL or the CeCILL are
  * applicable instead of those above. If you wish to allow use of your version
  * of this file only under the terms of either the GPL, the LGPL or the CeCILL,
@@ -699,8 +699,12 @@ scServices.scSearch = scOnLoads[scOnLoads.length] = {
 	   return : Concatinated result object */
 	xConcatResults : function(pRes1, pRes2){
 		if (typeof pRes1 == "undefined") return null;
-		if (typeof pRes2 == "undefined" || !pRes2.list || pRes2.list.length==0) return pRes1;
 		var vResult = pRes1;
+		if (typeof pRes2 == "undefined" || !pRes2.list || pRes2.list.length==0) {
+			if (typeof pRes2 != "undefined") vResult.or = (pRes2.or ? true : false);
+			else vResult.or = false;
+			return vResult;
+		}
 		for (var i = 0; i<pRes2.list.length; i++){
 			var vPage2 = pRes2.list[i];
 			if (typeof vResult.ctrl[vPage2.url] != "undefined"){

@@ -353,8 +353,12 @@ var scMapMgr = {
 		if(img.className.indexOf('maphighlighted')>=0) {
 
 
+
 			var wrapper = img.parentNode;
+			var imgWidth = img.width, imgHeight = img.height; 
 			$.before(img, wrapper);
+			img.width = Math.max(imgWidth, img.width);
+			img.height = Math.max(imgHeight, img.height);
 			$.remove(wrapper);
 			$.each(scPaLib.findNodes("chi:area", map), function() {
 				$.unregister(this, 'mouseover', mouseover);
